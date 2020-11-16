@@ -39,7 +39,7 @@ const expandWave = keyframes`
  }
 `
 
-const fadeInSkew = (translateX, skew ) => keyframes`
+const fadeInSkew = (translateX, skew) => keyframes`
   0% {
     opacity: 0;
     transform: translateX(${translateX}px);
@@ -82,25 +82,25 @@ const CentralContainer = styled.div`
 `
 
 const ButtonContainer = styled.button`
-width: 50px;
-height: 50px;
+width: 70px;
+height: 70px;
 border: none;
+border-radius: 50%;
+padding: 10px;
 background-color: transparent;
-transition: width 0.2s;
+transition: all 0.2s;
 opacity: 0.8;
-margin-bottom: 10px;
 cursor: pointer;
 
 &:hover {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 0px;
+  transform: scale(1.2);
+  box-shadow: 0px -1px 4px #3182CE;
 }
 &:active {
   outline: none;
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
+  box-shadow: 0px 4px 4px #3182CE inset;
+  border: 1px solid #3182CE;
+  padding: 15px;
 }
 &:focus {
   outline: none;
@@ -115,7 +115,7 @@ text-align: center;
 `
 
 const NavigationContainer = styled.div`
-display: ${props => props.active ? "flex":"none"};
+display: ${props => props.active ? "flex" : "none"};
 position: relative;
 height: 300px;
 width: 200px;
@@ -164,7 +164,7 @@ position: absolute;
 background-color: #3182ce;
 border-radius: 50%;
 transform: translateY(-20px);
-animation-name: ${props => props.active ? expandWave: ""};
+animation-name: ${props => props.active ? expandWave : ""};
 animation-duration: 1s;
 animation-iteration-count: 1;
 animation-timing-function: ease-out;
@@ -189,7 +189,7 @@ const IndexPage = () => {
       <ImageBGContainer>
         <Image filename={'ascend'} />
       </ImageBGContainer>
-      <BackgroundWave active={enableWave} onAnimationEnd={() => setEnableWave(false)}/>
+      <BackgroundWave active={enableWave} onAnimationEnd={() => setEnableWave(false)} />
 
       <NavigationContainer active={enableBranch}>
         <Link to="/home" >Home</Link>
@@ -202,9 +202,9 @@ const IndexPage = () => {
       <CentralContainer>
         <ButtonContainer onClick={() => {
           setEnableWave(true);
-          setEnableBranch(true)
-          }}>
-          <PlayButton />
+          setEnableBranch(true);
+        }}>
+          <PlayButton style={{ paddingLeft: 4 }} />
         </ButtonContainer>
 
         <TitleContainer>
