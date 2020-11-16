@@ -18,7 +18,7 @@ const Image = ({filename}) => {
             name
             relativePath
             childImageSharp {
-              fluid(maxWidth: 500){
+              fluid(maxWidth: 1920){
                 ...GatsbyImageSharpFluid
               }
             }

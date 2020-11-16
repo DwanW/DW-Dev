@@ -2,9 +2,10 @@ import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
   html {
+    margin: 0;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    font: 112.5%/1.45em georgia, serif, sans-serif;
+    font: 112.5%/1.45em work sans, serif, sans-serif;
     box-sizing: border-box;
     overflow-y: scroll;
   }
@@ -54,12 +55,16 @@ export const GlobalStyle = createGlobalStyle`
     display: none;
   }
   a {
+    text-decoration:none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
   }
   a:active,
   a:hover {
     outline-width: 0;
+  }
+  a:visited {
+    color: inherit;
   }
   abbr[title] {
     border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
@@ -114,14 +119,8 @@ export const GlobalStyle = createGlobalStyle`
   img {
     border-style: none;
     max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin: 0;
+    padding: 0;
   }
   svg:not(:root) {
     overflow: hidden;
@@ -176,6 +175,8 @@ export const GlobalStyle = createGlobalStyle`
   button,
   select {
     text-transform: none;
+    margin: 0;
+    padding: 0;
   }
   [type="reset"],
   [type="submit"],
