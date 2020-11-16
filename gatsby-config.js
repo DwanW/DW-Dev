@@ -1,12 +1,13 @@
 module.exports = {
   siteMetadata: {
     title: `DW Interactive Dev`,
-    description: `This is the official site for DW Interactive Dev where website are made modern and performant`,
+    description: `This is the official site for DW Interactive Dev where websites are made modern and performant`,
     author: `Dwan W.`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

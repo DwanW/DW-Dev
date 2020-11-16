@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { useStaticQuery, Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
@@ -130,7 +130,7 @@ height: 30px;
 width: 100%;
 border-left: 3px solid #3182ce;
 border-bottom: 3px solid #3182ce;
-animation: ${props => fadeInSkew(props.translateX, props.skew)} 0.5s ease-out 1 forwards;
+animation: ${props => fadeInSkew(props.translateX, props.skew)} 0.4s ease-out 1 forwards;
 `
 
 const TiltUpperRightLine = styled.div`
@@ -138,7 +138,7 @@ height: 30px;
 width: 100%;
 border-right: 3px solid #3182ce;
 border-bottom: 3px solid #3182ce;
-animation: ${props => fadeInSkew(props.translateX, props.skew)} 0.5s ease-out 1 forwards;
+animation: ${props => fadeInSkew(props.translateX, props.skew)} 0.4s ease-out 1 forwards;
 `
 
 const TiltBottomRightLine = styled.div`
@@ -146,7 +146,7 @@ height: 30px;
 width: 100%;
 border-right: 3px solid #3182ce;
 border-top: 3px solid #3182ce;
-animation: ${props => fadeInSkew(props.translateX, props.skew)} 0.5s ease-out 1 forwards;
+animation: ${props => fadeInSkew(props.translateX, props.skew)} 0.4s ease-out 1 forwards;
 `
 
 const TiltBottomLeftLine = styled.div`
@@ -154,7 +154,7 @@ height: 30px;
 width: 100%;
 border-left: 3px solid #3182ce;
 border-top: 3px solid #3182ce;
-animation: ${props => fadeInSkew(props.translateX, props.skew)} 0.5s ease-out 1 forwards;
+animation: ${props => fadeInSkew(props.translateX, props.skew)} 0.4s ease-out 1 forwards;
 `
 
 const BackgroundWave = styled.div`
@@ -174,7 +174,7 @@ const SeparateBox = styled.div`
 width: 100%;
 height: 0;
 margin: 0 0;
-animation: ${verticalExpand} 0.5s ease-out 1 0.5s forwards;
+animation: ${verticalExpand} 0.4s ease-out 1 0.4s forwards;
 `
 
 
@@ -192,11 +192,11 @@ const IndexPage = () => {
       <BackgroundWave active={enableWave} onAnimationEnd={() => setEnableWave(false)} />
 
       <NavigationContainer active={enableBranch}>
-        <Link to="/home" >Home</Link>
+        <AniLink fade duration={0.4} to="/home" >Home</AniLink>
         <TiltUpperLeftLine translateX={100} skew={35} />
         <SeparateBox />
         <TiltBottomLeftLine translateX={100} skew={-35} />
-        <Link to="/about">About</Link>
+        <AniLink fade duration={0.4} to="/about">About</AniLink>
       </NavigationContainer>
 
       <CentralContainer>
@@ -213,11 +213,11 @@ const IndexPage = () => {
       </CentralContainer>
 
       <NavigationContainer active={enableBranch}>
-        <Link to="/services" style={{ textAlign: "right" }}>Services</Link>
+        <AniLink fade duration={0.4} to="/services" style={{ textAlign: "right" }}>Services</AniLink>
         <TiltUpperRightLine translateX={-100} skew={-35} />
         <SeparateBox />
         <TiltBottomRightLine translateX={-100} skew={35} />
-        <Link to="/contact" style={{ textAlign: "right" }}>Contact</Link>
+        <AniLink fade duration={0.4} to="/contact" style={{ textAlign: "right" }}>Contact</AniLink>
       </NavigationContainer>
     </CoverPage>
   )
