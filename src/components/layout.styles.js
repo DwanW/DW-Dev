@@ -7,7 +7,6 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-text-size-adjust: 100%;
     font: 112.5%/1.45em work sans, serif, sans-serif;
     box-sizing: border-box;
-    overflow-y: scroll;
   }
   body {
     margin: 0;
