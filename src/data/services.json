@@ -1,0 +1,25 @@
+[
+    {
+        "title": "Blog, Portfolio Website",
+        "description": "Build your own personalized blog, and share your story with the world",
+        "image": "blog-website"
+    },
+    {
+        "title": "Mobile Responsive Website",
+        "description": "Make your website look great not just in one device, but across many platforms.",
+        "image": "responsive-website"
+    },
+    {
+        "title": "Custom Development",
+        "description": "Have a custom feature idea or design? we can build it for you.",
+        "image": "custom-website"
+    },    {
+        "title": "PWA",
+        "description": "Build not just a website, make it an App and power it with the ability to work offline and feels like part of native platform.",
+        "image": "pwa"
+    },    {
+        "title": "E-Commerce Website",
+        "description": "Enjoy the power of modern e-commerce web application.",
+        "image": "e-commerce"
+    }
+]

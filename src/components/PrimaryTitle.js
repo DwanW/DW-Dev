@@ -7,8 +7,8 @@ font-weight: 600;
 font-size: 48px;
 `
 
-const PrimaryTitle = ({children}) => (
-    <PrimaryTitleContainer>{children}</PrimaryTitleContainer>
+const PrimaryTitle = ({children, ...otherProps}) => (
+    <PrimaryTitleContainer {...otherProps}>{children}</PrimaryTitleContainer>
 )
 
 export default PrimaryTitle;

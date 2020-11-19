@@ -5,8 +5,8 @@ const PrimaryButton = styled.button`
 display: flex;
 justify-content: center;
 align-items: center;
-background: white;
-color: #3182CE;
+background: ${props => props.inverted ? "#3182CE" : "white"};
+color: ${props => props.inverted ? "white" : "#3182CE"};
 padding: 15px 30px;
 border: 1px solid rgba(49, 130, 206, 0.3);
 transition: all 0.3s;
@@ -16,8 +16,8 @@ box-shadow: 0px 4px 4px #3182CE;
 cursor: pointer;
 
 &:hover {
-color: white;
-background-color: #3182CE;
+color: ${props => props.inverted ? "#3182CE" : "white"};
+background-color: ${props => props.inverted ? "white" : "#3182CE"};
 }
 &:active {
   outline: none;
@@ -28,8 +28,8 @@ background-color: #3182CE;
 }
 `
 
-const CustomButton = ({children, ...otherProps}) => (
-    <PrimaryButton {...otherProps}>{children}</PrimaryButton>
+const CustomButton = ({ children, inverted, ...otherProps }) => (
+  <PrimaryButton inverted={inverted} {...otherProps}>{children}</PrimaryButton>
 )
 
 export default CustomButton
