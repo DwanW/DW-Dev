@@ -1,0 +1,17 @@
+[
+    {
+        "image": "person",
+        "title": "Who are we",
+        "description": "We are a group of passionate developers based in Calgary, initially established in 2020. "
+    },
+    {
+        "image": "team",
+        "title": "What we do",
+        "description": "We love to help others with promoting their online presence, whether that is for personal or business use. We are team of passionate developers looking to solve that problem for you."
+    },
+    {
+        "image": "business-group",
+        "title": "What matters to us",
+        "description": "We want to be innovative and stay up to date with modern way of solving problems effectively, which means being open to things is extremely important to us. We believe in that “There’s always a solution, and it is important to be persistent and goal focus to solve any problem."
+    }
+]
