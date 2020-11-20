@@ -58,6 +58,9 @@ export const GlobalStyle = createGlobalStyle`
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
   }
+  a:link {
+    color: inherit;
+  }
   a:active,
   a:hover {
     outline-width: 0;
