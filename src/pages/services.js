@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 
@@ -17,6 +17,8 @@ import MongoIcon from '../brand/mongodb.svg'
 import AWSIcon from '../brand/amazonaws.svg'
 import LightHouseIcon from '../brand/lighthouse.svg'
 import PostgreIcon from '../brand/postgresql.svg'
+
+import addToMailchimp from 'gatsby-plugin-mailchimp'
 
 const ServicesSection = styled.div`
 width: 100%;
@@ -47,7 +49,7 @@ align-items: flex-start;
 box-shadow: 4px 4px 4px rgba(0,0,0,0.25);
 border-radius: 7px;
 background-color: white;
-margin-left: ${props=> props.index%2===0? "-30%": "-10%"};
+margin-left: ${props => props.index % 2 === 0 ? "-30%" : "-10%"};
 z-index: 1;
 `
 
@@ -116,7 +118,7 @@ font-size: 16px;
 font-weight: 600;
 `
 
-const EmailInput = styled.div`
+const EmailInput = styled.form`
 display:flex;
 margin-top: 20px;
 `
@@ -159,8 +161,25 @@ const ServicesPage = ({ location }) => {
         image
       }
     }
+  }`)
+
+  const [email, setEmail] = useState("");
+  const [subStatus, setSubStatus] = useState(null);
+  const [message, setMessage] = useState(null)
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    const result = await addToMailchimp(email)
+    // there are option to pass other info along with email
+    setEmail("")
+    setSubStatus(result.result)
+    if (result.result === "success") {
+      setMessage("Thank you for subscribing!")
+    } else {
+      setMessage("Error, Please try again!")
+    }
   }
-`)
+
   return (
     <Layout location={location}>
       <SEO title="Services" />
@@ -169,7 +188,7 @@ const ServicesPage = ({ location }) => {
           data.allServicesJson.nodes.map((node, idx) => {
             return (
               <ServiceContainer key={idx} >
-                <Image filename={node.image} wrapperStyle={{ width: "50%", borderRadius: 25, transform: idx%2 ===0? "translateX(-20%)": "translateX(20%)" }} imgStyle={{ opacity: 0.8 }} />
+                <Image filename={node.image} wrapperStyle={{ width: "50%", borderRadius: 25, transform: idx % 2 === 0 ? "translateX(-20%)" : "translateX(20%)" }} imgStyle={{ opacity: 0.8 }} />
                 <ServiceCardContainer index={idx}>
                   <ServiceCardTitle>{node.title}</ServiceCardTitle>
                   <ServiceCardDescription>{node.description}</ServiceCardDescription>
@@ -203,14 +222,22 @@ const ServicesPage = ({ location }) => {
       <EmailSection>
         <PrimaryTitle>Interested In Our Work?</PrimaryTitle>
         <EmailSuperTitle>Don’t miss out on latest newsletter on development trend</EmailSuperTitle>
-        <EmailInput>
-          <CustomInput placeholder="Email" type="email" style={{marginRight: 20}}/>
-          <CustomButton inverted style={{padding: "10px 20px", fontSize: 20}}>Subscribe</CustomButton>
+        <EmailInput onSubmit={handleSubscribe}>
+          <CustomInput
+            placeholder="Email" type="text"
+            style={{ marginRight: 20 }}
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            message={message}
+            show={subStatus !== null}
+            success={subStatus === "success"}
+          />
+          <CustomButton inverted style={{ padding: "5px 25px", fontSize: 20 }} type="submit" >Subscribe</CustomButton>
         </EmailInput>
         <EmailSubTitle>Never Spam, Unsubscribe anytime</EmailSubTitle>
       </EmailSection>
       <BrandSection>
-        <PrimaryTitle style={{fontSize: 30}}>Powered by</PrimaryTitle>
+        <PrimaryTitle style={{ fontSize: 30 }}>Powered by</PrimaryTitle>
         <BrandContainer>
           <GatsbyIcon />
           <RTIcon />

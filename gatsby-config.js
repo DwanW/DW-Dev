@@ -52,7 +52,14 @@ module.exports = {
           include: /.svg$/
         }
       }
-    }
+    },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+          endpoint: 'https://gmail.us2.list-manage.com/subscribe/post?u=b9534d380f45405c93f212408&amp;id=aa3682903e',
+          timeout: 3500,
+      },
+  },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

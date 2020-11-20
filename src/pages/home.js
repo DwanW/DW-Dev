@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -199,7 +200,9 @@ const HomePage = ({ location }) => {
       </KeyFeatureSection>
 
       <ButtonContainer>
-        <CustomButton>Get Started</CustomButton>
+        <AniLink fade duration={0.4} to="/services" className="navLink" >
+          <CustomButton>Get Started</CustomButton>
+        </AniLink>
       </ButtonContainer>
 
       <MiddleSection>
@@ -229,18 +232,21 @@ const HomePage = ({ location }) => {
           {
             data.allValuesJson.nodes.map((node, idx) => {
               return (
-              <ValueCard key={idx}>
-                <ValueTitle>{node.title.toUpperCase()}</ValueTitle>
-                <TitleBar></TitleBar>
-                <ValueDescription>{node.description}</ValueDescription>
-              </ValueCard>
-            )})
+                <ValueCard key={idx}>
+                  <ValueTitle>{node.title.toUpperCase()}</ValueTitle>
+                  <TitleBar></TitleBar>
+                  <ValueDescription>{node.description}</ValueDescription>
+                </ValueCard>
+              )
+            })
           }
         </ValueContainer>
       </ValueSection>
 
       <ButtonContainer>
-        <CustomButton>Let's Chat</CustomButton>
+        <AniLink fade duration={0.4} to="/contact" className="navLink" >
+          <CustomButton>Let's Chat</CustomButton>
+        </AniLink>
       </ButtonContainer>
     </Layout>
   )

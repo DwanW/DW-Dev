@@ -16,16 +16,18 @@ align-items: center;
 position: relative;
 `
 
-const PrimaryInput = styled.input`
+const CustomTextArea = styled.textarea`
 background: #FFFFFF;
 border-radius: 6px;
-padding: 10px 10px;
+padding: 5px 10px;
 border: none;
 transition: all 0.3s;
 font-weight: 600;
 font-size: 20px;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 color: #343434;
+margin-top: 15px;
+resize: none;
 
 &::placeholder {
 font-weight: 600;
@@ -47,7 +49,7 @@ display: flex;
 justify-content: flex-start;
 align-items: center;
 width: 100%;
-height: 100%;
+height: 30px;
 top: 100%;
 padding: 5px 10px;
 font-size: 14px;
@@ -56,9 +58,9 @@ font-weight: 600;
 animation: ${fadeIn} 3s forwards 1 ease-in-out;
 `
 
-const CustomInput = ({ children, inverted, placeholder, message, show = false, success, ...otherProps }) => (
+const CustomInputArea = ({ children, inverted, placeholder, message, show = false, success, ...otherProps }) => (
   <PrimaryInputWrapper>
-    <PrimaryInput inverted={inverted} placeholder={placeholder} {...otherProps}>{children}</PrimaryInput>
+    <CustomTextArea inverted={inverted} placeholder={placeholder} {...otherProps}>{children}</CustomTextArea>
     {
       show ? <InputFeedback>
         {
@@ -71,4 +73,4 @@ const CustomInput = ({ children, inverted, placeholder, message, show = false, s
   </PrimaryInputWrapper>
 )
 
-export default CustomInput
+export default CustomInputArea

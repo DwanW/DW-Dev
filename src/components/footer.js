@@ -59,10 +59,10 @@ const Footer = () => (
         <ImageGradient />
         <Image filename={'foot-bg'} wrapperStyle={{backgroundColor: '#3182CE', position: "absolute", width: "100%", height: "100%", top: 0, zIndex: -1}} imgStyle={{opacity: 0.2}} />
         <MediaLinkContainer>
-          <LinkContainer><a href="https://www.facebook.com/dwan.wang.585" target="_blank" aria-label="facebook" rel="noreferrer" ><FaceBookIcon /></a></LinkContainer>
-          <LinkContainer><a href="https://www.instagram.com/dwinteractivedev/" target="_blank" aria-label="instagram" rel="noreferrer" ><InstagramIcon /></a></LinkContainer>
-          <LinkContainer><a href="http://www.linkedin.com/company/dw-interactive-dev" target="_blank" aria-label="linkedin" rel="noreferrer" ><LinkedInIcon /></a></LinkContainer>
-          <LinkContainer><a href="https://twitter.com/Dwan87734256" target="_blank" aria-label="twitter" rel="noreferrer" ><TwitterIcon /></a></LinkContainer>
+          <LinkContainer><a href="https://www.facebook.com/dwan.wang.585" target="_blank" aria-label="facebook" rel="noreferrer" ><FaceBookIcon fill="white"/></a></LinkContainer>
+          <LinkContainer><a href="https://www.instagram.com/dwinteractivedev/" target="_blank" aria-label="instagram" rel="noreferrer" ><InstagramIcon fill="white"/></a></LinkContainer>
+          <LinkContainer><a href="http://www.linkedin.com/company/dw-interactive-dev" target="_blank" aria-label="linkedin" rel="noreferrer" ><LinkedInIcon fill="white"/></a></LinkContainer>
+          <LinkContainer><a href="https://twitter.com/Dwan87734256" target="_blank" aria-label="twitter" rel="noreferrer" ><TwitterIcon fill="white"/></a></LinkContainer>
         </MediaLinkContainer>
         <FooterNavLinkContainer>
           <AniLink fade duration={0.4} to="/home" className="navLink" >Home</AniLink>
