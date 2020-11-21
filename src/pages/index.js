@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import PlayButton from '../icons/play-button-arrowhead.svg'
 import styled, { keyframes } from 'styled-components'
 import { GlobalStyle } from "../components/layout.styles"
+import screenSizes from '../data/screenSizes'
 
 const floatUp = keyframes`
   0% {
@@ -112,6 +113,14 @@ margin-top: 20px;
 z-index: 1;
 pointer-events: none;
 text-align: center;
+
+@media only screen and (max-width: ${screenSizes.md}){
+ font-size: 20px;
+}
+
+@media only screen and (max-width: ${screenSizes.sm}){
+ font-size: 16px;
+}
 `
 
 const NavigationContainer = styled.div`
@@ -123,6 +132,16 @@ margin: 0 20px;
 flex-direction:column;
 justify-content:center;
 transform:translateY(-30px);
+
+@media only screen and (max-width: ${screenSizes.md}){
+ font-size: 16px;
+ width: 150px;
+}
+
+@media only screen and (max-width: ${screenSizes.sm}){
+ font-size: 14px;
+ width: 100px;
+}
 `
 
 const TiltUpperLeftLine = styled.div`

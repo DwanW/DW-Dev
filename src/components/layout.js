@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Footer from "./footer"
 import { GlobalStyle } from "./layout.styles"
+import screenSizes from '../data/screenSizes'
 
 import styled from 'styled-components'
 
@@ -17,10 +18,14 @@ justify-content: space-between;
 `
 
 const MainBody = styled.main`
-  margin: 0 auto;
-  max-width: 960px;
-  width: 960px;
-  padding: 0 1.0875rem 1.45rem;
+margin: 0 auto;
+max-width: 960px;
+padding: 0 1.0875rem 1.45rem;
+
+@media only screen and (max-width: ${screenSizes.md}){
+  padding: 0;
+}
+
 `
 
 const Layout = ({ children, location }) => {

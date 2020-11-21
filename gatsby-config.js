@@ -37,13 +37,18 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: '@slixites/gatsby-plugin-google-fonts',
       options: {
-          fonts: [
-            `work sans`,
-          ],
-          display: 'swap'
-      }
+        fonts: [
+          `work sans`,
+        ],
+        display: 'swap',
+        preconnect: true,
+        attributes: {
+            rel: 'stylesheet preload prefetch',
+            as: 'style',
+        },
+      },
     },
     {
       resolve: "gatsby-plugin-react-svg",

@@ -8,6 +8,7 @@ import styled from 'styled-components'
 import Image from "../components/image"
 import CustomButton from '../components/CustomButton';
 import PrimaryTitle from '../components/PrimaryTitle';
+import screenSizes from '../data/screenSizes'
 
 import ModernIllustration from '../icons/modern.svg'
 import OptimizeIllustration from '../icons/optimize.svg'
@@ -17,7 +18,16 @@ import TechIcon from '../icons/tech.svg'
 import ScaleIcon from '../icons/scale.svg'
 
 
+
 const KeyFeatureSection = styled.div`
+
+& .row-reverse {
+  flex-direction: row-reverse;
+
+  @media only screen and (max-width: ${screenSizes.lg}){
+  flex-direction: column;
+  }
+}
 `
 
 const FeatureItem = styled.div`
@@ -25,6 +35,18 @@ display: flex;
 margin-top: 100px;
 justify-content: space-between;
 align-items: center;
+
+@media only screen and (max-width: ${screenSizes.lg}){
+flex-direction: column;
+}
+
+& .text-right{
+text-align: right;
+
+  @media only screen and (max-width: ${screenSizes.lg}){
+  text-align: left;
+  }
+}
 `
 
 const FeatureImageContainer = styled.div`
@@ -39,6 +61,11 @@ line-height: 42.23px;
 
 & .highlight {
   color: #3182ce;
+}
+
+@media only screen and (max-width: ${screenSizes.lg}){
+ font-size: 24px;
+ width: 50%; 
 }
 `
 
@@ -179,11 +206,11 @@ const HomePage = ({ location }) => {
         </FeatureDescriptionContainer>
         </FeatureItem>
 
-        <FeatureItem style={{ flexDirection: "row-reverse" }}>
+        <FeatureItem className="row-reverse">
           <FeatureImageContainer>
             <OptimizeIllustration />
           </FeatureImageContainer>
-          <FeatureDescriptionContainer style={{ textAlign: "right" }}>
+          <FeatureDescriptionContainer className="text-right">
             High quality media content with great website <span className="highlight">Performance</span>.
         </FeatureDescriptionContainer>
         </FeatureItem>
