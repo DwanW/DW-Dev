@@ -45,7 +45,7 @@ module.exports = {
         display: 'swap',
         preconnect: true,
         attributes: {
-            rel: 'stylesheet preload prefetch',
+            rel: 'stylesheet preload',
             as: 'style',
         },
       },
