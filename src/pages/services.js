@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,7 +9,8 @@ import Image from "../components/image"
 import CustomButton from '../components/CustomButton'
 import CustomInput from '../components/CustomInput'
 import PrimaryTitle from '../components/PrimaryTitle'
-import processData from '../data/process';
+import processData from '../data/process'
+import screenSizes from '../data/screenSizes'
 
 import GatsbyIcon from '../brand/gatsby.svg'
 import RTIcon from '../brand/rct.svg'
@@ -36,6 +38,11 @@ display: flex;
 justify-content: center;
 align-items: center;
 margin-bottom: 120px;
+
+@media only screen and (max-width: ${screenSizes.md}){
+  flex-direction: column;
+  margin-bottom: 80px;
+}
 `
 
 const ServiceCardContainer = styled.div`
@@ -51,6 +58,11 @@ border-radius: 7px;
 background-color: white;
 margin-left: ${props => props.index % 2 === 0 ? "-30%" : "-10%"};
 z-index: 1;
+
+@media only screen and (max-width: ${screenSizes.md}){
+  width: 80%;
+  margin-left: 0;
+}
 `
 
 const ServiceCardTitle = styled.div`
@@ -67,6 +79,10 @@ margin-top: 10px;
 const ButtonContainer = styled.div`
 margin: 80px auto 0px auto;
 width: fit-content;
+
+@media only screen and (max-width: ${screenSizes.md}){
+  margin: 30px auto 0px auto;
+}
 `
 
 const ProcessSection = styled.div`
@@ -116,11 +132,22 @@ const EmailSuperTitle = styled.div`
 margin-top: 50px;
 font-size: 16px;
 font-weight: 600;
+text-align: center;
+padding: 0px 10px;
 `
 
 const EmailInput = styled.form`
 display:flex;
 margin-top: 20px;
+justify-content: space-between;
+width: 420px;
+
+@media only screen and (max-width: ${screenSizes.sm}){
+  flex-direction: column;
+  height: 120px;
+  justify-content: space-between;
+  width: fit-content;
+}
 `
 
 const EmailSubTitle = styled.div`
@@ -147,6 +174,11 @@ margin-top: 40px;
   height: 40px;
   margin: 0 10px;
   opacity: 0.8;
+}
+
+@media only screen and (max-width: ${screenSizes.sm}){
+  padding: 0 10px;
+  text-align: center;
 }
 `
 
@@ -200,7 +232,9 @@ const ServicesPage = ({ location }) => {
       </ServicesSection>
 
       <ButtonContainer>
-        <CustomButton>Get Started</CustomButton>
+        <AniLink fade duration={0.4} to="/contact">
+          <CustomButton aria-label="contact">Get Started</CustomButton>
+        </AniLink>
       </ButtonContainer>
 
       <ProcessSection>
@@ -225,14 +259,13 @@ const ServicesPage = ({ location }) => {
         <EmailInput onSubmit={handleSubscribe}>
           <CustomInput
             placeholder="Email" type="text"
-            style={{ marginRight: 20 }}
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             message={message}
             show={subStatus !== null}
             success={subStatus === "success"}
           />
-          <CustomButton inverted style={{ padding: "5px 25px", fontSize: 20 }} type="submit" >Subscribe</CustomButton>
+          <CustomButton inverted style={{ padding: "5px 25px", fontSize: 20 }} type="submit" aria-label="subscribe" >Subscribe</CustomButton>
         </EmailInput>
         <EmailSubTitle>Never Spam, Unsubscribe anytime</EmailSubTitle>
       </EmailSection>

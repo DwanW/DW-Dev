@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import CustomInput from "../components/CustomInput"
 import CustomButton from "../components/CustomButton"
 import CustomInputArea from "../components/CustomInputArea"
+import screenSizes from "../data/screenSizes"
 
 import FaceBookIcon from '../icons/facebook.svg'
 import InstagramIcon from '../icons/instagram.svg'
@@ -30,12 +31,17 @@ text-align: center;
 
 const FAQItem = styled.div`
 margin: 20px 0;
+
+@media only screen and (max-width: ${screenSizes.md}){
+  margin: 20px 20px;
+}
 `
 
 const QuestionContainer = styled.div`
 color: #343434;
 font-size: 22px;
 font-weight: 600;
+line-height: 28px;
 `
 
 const AnswerContainer = styled.div`
@@ -79,11 +85,26 @@ margin-top: 40px;
 `
 
 const FormContainer = styled.form`
+margin: 20px 20px;
 `
 
 const RowContainer = styled.div`
 display: flex;
 width: 100%;
+
+& > div {
+  margin-right: 20px;
+}
+
+@media only screen and (max-width: ${screenSizes.md}){
+  flex-direction: column;
+  height: 100px;
+  justify-content: space-between;
+
+  & > div {
+  margin-right: 0px;
+}
+}
 `
 
 const ContactPage = ({ location }) => {
@@ -174,7 +195,7 @@ const ContactPage = ({ location }) => {
             <CustomInput
               placeholder="Email"
               type="email"
-              style={{ flexGrow: 1, marginRight: 20 }}
+              style={{ flexGrow: 1}}
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
@@ -196,7 +217,7 @@ const ContactPage = ({ location }) => {
             show={status !== null}
             success={status === "success"}
           />
-          <CustomButton inverted type="submit" style={{ padding: "5px 40px", fontSize: 20, marginTop: 30 }}>Submit</CustomButton>
+          <CustomButton inverted type="submit" style={{ padding: "5px 40px", fontSize: 20, marginTop: 30 }} aria-label="submit-form">Submit</CustomButton>
         </FormContainer>
       </FormSection>
     </Layout>

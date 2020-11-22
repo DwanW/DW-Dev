@@ -51,6 +51,13 @@ text-align: right;
 
 const FeatureImageContainer = styled.div`
 width: 50%; 
+
+@media only screen and (max-width: ${screenSizes.lg}){
+flex-direction: column;
+}
+@media only screen and (max-width: ${screenSizes.sm}){
+  width: 80vw;
+}
 `
 
 const FeatureDescriptionContainer = styled.div`
@@ -66,6 +73,10 @@ line-height: 42.23px;
 @media only screen and (max-width: ${screenSizes.lg}){
  font-size: 24px;
  width: 50%; 
+}
+
+@media only screen and (max-width: ${screenSizes.sm}){
+  width: 80vw;
 }
 `
 
@@ -105,13 +116,23 @@ font-weight: 500;
 color: white;
 display: flex;
 justify-content: center;
-font-size: 48px;
+font-size: 40px;
+
+@media only screen and (max-width: ${screenSizes.lg}){
+ font-size: 32px; 
+}
 `
 
 const ElementContainer = styled.div`
 margin-top: 100px;
 display: flex;
 justify-content: space-evenly;
+
+@media only screen and (max-width: ${screenSizes.lg}){
+ flex-direction: column;
+ justify-content: center;
+ margin-top: 50px;
+}
 `
 
 const ElementCard = styled.div`
@@ -119,6 +140,12 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+@media only screen and (max-width: ${screenSizes.lg}){
+  flex-direction: row;
+  width: 250px;
+  justify-content: space-between;
+  margin: 20px auto;
+}
 `
 
 const ElementBox = styled.div`
@@ -132,12 +159,22 @@ box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
 & .straighten {
   transform: rotate(45deg) scale(0.7);
 }
+
+@media only screen and (max-width: ${screenSizes.lg}){
+  height: 60px;
+  width: 60px;
+}
 `
 
 const ElementTitle = styled.div`
 color: white;
-font-size: 32px;
+font-size: 28px;
 margin-top: 50px;
+
+@media only screen and (max-width: ${screenSizes.lg}){
+  font-size: 24px;
+  margin-top: 0px;
+}
 `
 
 const ValueSection = styled.div`
@@ -152,6 +189,10 @@ const ValueContainer = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
+
+@media only screen and (max-width: ${screenSizes.lg}){
+  flex-direction: column;
+}
 `
 
 const ValueCard = styled.div`
@@ -169,9 +210,10 @@ text-align: center;
 `
 
 const TitleBar = styled.div`
-width: 30%;
+width: 120px;
 margin-top: 10px;
 border: 3px solid #3182ce;
+background-color:#3182ce;
 border-radius: 3px;
 `
 
@@ -179,6 +221,10 @@ const ValueDescription = styled.div`
 margin-top: 30px;
 text-align: center;
 color: #343434;
+
+@media only screen and (max-width: ${screenSizes.lg}){
+  width: 300px;
+}
 `
 
 const HomePage = ({ location }) => {
@@ -228,7 +274,7 @@ const HomePage = ({ location }) => {
 
       <ButtonContainer>
         <AniLink fade duration={0.4} to="/services" className="navLink" >
-          <CustomButton>Get Started</CustomButton>
+          <CustomButton aria-label="services">Get Started</CustomButton>
         </AniLink>
       </ButtonContainer>
 
@@ -272,7 +318,7 @@ const HomePage = ({ location }) => {
 
       <ButtonContainer>
         <AniLink fade duration={0.4} to="/contact" className="navLink" >
-          <CustomButton>Let's Chat</CustomButton>
+          <CustomButton aria-label="contact">Let's Chat</CustomButton>
         </AniLink>
       </ButtonContainer>
     </Layout>

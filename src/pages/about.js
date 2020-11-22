@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Image from '../components/image'
+import screenSizes from '../data/screenSizes'
 
 const AboutTitle = styled.div`
 font-weight: 600;
@@ -17,6 +18,10 @@ margin-top: 50px;
 const AboutDescription = styled.div`
 width: 400px;
 margin: 40px auto;
+
+@media only screen and (max-width: ${screenSizes.sm}){
+  width: 80vw;
+}
 `
 
 const AboutPage = ({location}) => {
@@ -40,7 +45,7 @@ const AboutPage = ({location}) => {
       data.allAboutJson.nodes.map((node, idx) => {
         return(
           <div key={idx}>
-            <Image filename={node.image} wrapperStyle={{width: 400, margin: "auto"}}/>
+            <Image filename={node.image} wrapperStyle={{width: 350, margin: "auto"}}/>
             <AboutTitle>{node.title}</AboutTitle>
             <AboutDescription>{node.description}</AboutDescription>
           </div>

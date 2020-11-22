@@ -24,6 +24,7 @@ padding: 0 1.0875rem 1.45rem;
 
 @media only screen and (max-width: ${screenSizes.md}){
   padding: 0;
+  margin: 0;
 }
 
 `

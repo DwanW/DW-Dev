@@ -6,6 +6,7 @@ import LinkedInIcon from '../icons/linkedin.svg'
 import TwitterIcon from '../icons/twitter.svg'
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Image from "./image"
+import screenSizes from '../data/screenSizes'
 
 const FooterContainer = styled.div`
 width: 100%;
@@ -32,12 +33,20 @@ width: fit-content;
 display: flex;
 align-items: center;
 justify-content: center;
+
+@media only screen and (max-width: ${screenSizes.sm}){
+  flex-direction: column;
+}
 `
 
 const LinkContainer = styled.div`
 width: 40px;
 height: 40px;
 margin: 0 20px;
+
+@media only screen and (max-width: ${screenSizes.sm}){
+  margin: 5px 0px;
+}
 `
 
 const FooterNavLinkContainer = styled.div`
