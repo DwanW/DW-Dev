@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from 'styled-components'
 import Logo from '../brand/logo.svg'
+// import Logo2 from '../brand/logo2.svg'
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const HeaderContainer = styled.div`
@@ -40,8 +41,8 @@ const Header = ({ siteTitle, location }) => {
   return (
     <HeaderContainer>
       <LogoContainer >
-        <AniLink fade duration={0.4} to="/" className="navLink" >
-          <Logo />
+        <AniLink fade duration={0.4} to="/" className="navLink" style={{display: "flex", alignItems: "center", fontSize: "50px"}}>
+          <Logo width="120px"/><div style={{ fontFamily: "Arial Black, Gadget, sans-serif", color:"white", background:"#3297FD", padding: "18px 40px"}}>DW Interactive Dev</div>
         </AniLink>
       </LogoContainer>
 

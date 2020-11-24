@@ -1,31 +1,33 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import Image from "../components/image"
+// import Image from "../components/image"
 import SEO from "../components/seo"
+import Video from "../components/video"
+// import NexusVideo from "../assets/nexus.mp4"
 
 import PlayButton from '../icons/play-button-arrowhead.svg'
 import styled, { keyframes } from 'styled-components'
 import { GlobalStyle } from "../components/layout.styles"
 import screenSizes from '../data/screenSizes'
 
-const floatUp = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(0px);
-  }
-  5% {
-    opacity: 0.22;
-    transform: translateY(-10px);
-  }
-  95% {
-    opacity: 0.22;
-    transform: translateY(-190px);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-200px);
-  }
-`
+// const floatUp = keyframes`
+//   0% {
+//     opacity: 0;
+//     transform: translateY(0px);
+//   }
+//   5% {
+//     opacity: 0.22;
+//     transform: translateY(-10px);
+//   }
+//   95% {
+//     opacity: 0.22;
+//     transform: translateY(-190px);
+//   }
+//   100% {
+//     opacity: 0;
+//     transform: translateY(-200px);
+//   }
+// `
 
 const expandWave = keyframes`
  0% {
@@ -64,22 +66,25 @@ const CoverPage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(0,0,0,0.0);
 `
 
-const ImageBGContainer = styled.div`
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  animation: ${floatUp} 20s infinite linear 0s both;
-  pointer-events: none;
-`
+// const ImageBGContainer = styled.div`
+//   position: absolute;
+//   height: 100%;
+//   width: 100%;
+//   z-index: 1;
+//   animation: ${floatUp} 20s infinite linear 0s both;
+//   pointer-events: none;
+// `
 
 const CentralContainer = styled.div`
+  align-self: flex-start;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  height: 50%;
 `
 
 const ButtonContainer = styled.button`
@@ -108,11 +113,24 @@ cursor: pointer;
 }
 `
 const TitleContainer = styled.div`
-font-size: 24px;
-margin-top: 20px;
+font-size: 80px;
+margin-bottom: 12%;
 z-index: 1;
 pointer-events: none;
 text-align: center;
+line-height: 100px;
+font-size: 70px;
+color: #c2c2c2;
+font-family: Arial Black, Gadget, sans-serif;
+text-shadow: 0px 0px 0 rgb(154,154,154),
+              -1px -1px  0 rgb(114,114,114),
+              -2px -2px 1px rgba(247,0,0,0.6),
+              -2px -2px 1px rgba(247,0,0,0.5),
+              0px 0px 1px rgba(247,0,0,.2);
+background-color: #3297FD;
+padding: 0 20px;
+display: flex;
+justify-content: center;
 
 @media only screen and (max-width: ${screenSizes.md}){
  font-size: 20px;
@@ -132,6 +150,17 @@ margin: 0 20px;
 flex-direction:column;
 justify-content:center;
 transform:translateY(-30px);
+color: #FFFFFF;
+
+& a {
+  font-size: 40px;
+  font-family: "Arial Black";
+  transition: 0.3s;
+
+  @media only screen and (max-width: ${screenSizes.md}){
+  font-size: 18px;
+  }
+}
 
 @media only screen and (max-width: ${screenSizes.md}){
  font-size: 16px;
@@ -200,14 +229,25 @@ animation: ${verticalExpand} 0.4s ease-out 1 0.4s forwards;
 const IndexPage = () => {
   const [enableWave, setEnableWave] = useState(false);
   const [enableBranch, setEnableBranch] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== `undefined`) {
+      const { isMobile } = require("../utils/isMobile");
+      setIsMobile(isMobile);
+    }
+  }, []);
 
   return (
     <CoverPage>
       <GlobalStyle />
       <SEO title="Cover" />
-      <ImageBGContainer>
+      {
+        !isMobile ? <Video src='/nexus.mp4' />: null
+      }
+      {/* <ImageBGContainer>
         <Image filename={'ascend'} />
-      </ImageBGContainer>
+      </ImageBGContainer> */}
       <BackgroundWave active={enableWave} onAnimationEnd={() => setEnableWave(false)} />
 
       <NavigationContainer active={enableBranch}>
@@ -219,16 +259,15 @@ const IndexPage = () => {
       </NavigationContainer>
 
       <CentralContainer>
+      <TitleContainer>
+          <div>DW</div> <div>Interactive</div> <div>Dev</div>
+      </TitleContainer>
         <ButtonContainer onClick={() => {
           setEnableWave(true);
           setEnableBranch(true);
         }}>
           <PlayButton style={{ paddingLeft: 4 }} />
         </ButtonContainer>
-
-        <TitleContainer>
-          DW Interactive Dev
-      </TitleContainer>
       </CentralContainer>
 
       <NavigationContainer active={enableBranch}>
