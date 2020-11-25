@@ -1,284 +1,336 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-// import Image from "../components/image"
+
+import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Video from "../components/video"
-// import NexusVideo from "../assets/nexus.mp4"
-
-import PlayButton from '../icons/play-button-arrowhead.svg'
-import styled, { keyframes } from 'styled-components'
-import { GlobalStyle } from "../components/layout.styles"
+import styled from 'styled-components'
+import Image from "../components/image"
+import CustomButton from '../components/CustomButton';
+import PrimaryTitle from '../components/PrimaryTitle';
 import screenSizes from '../data/screenSizes'
+// import Video from '../components/video'
 
-// const floatUp = keyframes`
-//   0% {
-//     opacity: 0;
-//     transform: translateY(0px);
-//   }
-//   5% {
-//     opacity: 0.22;
-//     transform: translateY(-10px);
-//   }
-//   95% {
-//     opacity: 0.22;
-//     transform: translateY(-190px);
-//   }
-//   100% {
-//     opacity: 0;
-//     transform: translateY(-200px);
-//   }
-// `
+import ModernIllustration from '../icons/modern.svg'
+import OptimizeIllustration from '../icons/optimize.svg'
+import BuildIllustration from '../icons/build.svg'
+import RocketIcon from '../icons/flying-rocket.svg'
+import TechIcon from '../icons/tech.svg'
+import ScaleIcon from '../icons/scale.svg'
 
-const expandWave = keyframes`
- 0% {
-   opacity: 1;
-   width: 0;
-   height: 0;
- }
- 100% {
-  opacity: 0;
-  width: 1000px;
-  height: 1000px;
- }
-`
 
-const fadeInSkew = (translateX, skew) => keyframes`
-  0% {
-    opacity: 0;
-    transform: translateX(${translateX}px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0px) skew(${skew}deg);
-  }
-`
 
-const verticalExpand = keyframes`
-  0%{ margin: 0 0}
-  100% {margin: 25px 0}
-`
-const CoverPage = styled.div`
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  position: relative;
-  overflow:hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0,0,0,0.0);
-`
+const KeyFeatureSection = styled.div`
+margin-top: 100px;
+& .row-reverse {
+  flex-direction: row-reverse;
 
-// const ImageBGContainer = styled.div`
-//   position: absolute;
-//   height: 100%;
-//   width: 100%;
-//   z-index: 1;
-//   animation: ${floatUp} 20s infinite linear 0s both;
-//   pointer-events: none;
-// `
-
-const CentralContainer = styled.div`
-  align-self: flex-start;
-  display: flex;
+  @media only screen and (max-width: ${screenSizes.lg}){
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  height: 50%;
-`
-
-const ButtonContainer = styled.button`
-width: 70px;
-height: 70px;
-border: none;
-border-radius: 50%;
-padding: 10px;
-background-color: transparent;
-transition: all 0.2s;
-opacity: 0.8;
-cursor: pointer;
-
-&:hover {
-  transform: scale(1.2);
-  box-shadow: 0px -1px 4px #3182CE;
-}
-&:active {
-  outline: none;
-  box-shadow: 0px 4px 4px #3182CE inset;
-  border: 1px solid #3182CE;
-  padding: 15px;
-}
-&:focus {
-  outline: none;
+  }
 }
 `
-const TitleContainer = styled.div`
-font-size: 80px;
-margin-bottom: 12%;
-z-index: 1;
-pointer-events: none;
-text-align: center;
-line-height: 100px;
-font-size: 70px;
-color: #c2c2c2;
-font-family: Arial Black, Gadget, sans-serif;
-text-shadow: 0px 0px 0 rgb(154,154,154),
-              -1px -1px  0 rgb(114,114,114),
-              -2px -2px 1px rgba(247,0,0,0.6),
-              -2px -2px 1px rgba(247,0,0,0.5),
-              0px 0px 1px rgba(247,0,0,.2);
-background-color: #3297FD;
-padding: 0 20px;
+
+const FeatureItem = styled.div`
+display: flex;
+width: 100%;
+margin-top: 60px;
+margin-left: auto;
+margin-right: auto;
+justify-content: space-between;
+align-items: center;
+
+@media only screen and (max-width: ${screenSizes.lg}){
+flex-direction: column;
+}
+
+& .text-right{
+text-align: right;
+
+  @media only screen and (max-width: ${screenSizes.lg}){
+  text-align: left;
+  }
+}
+`
+
+const FeatureImageContainer = styled.div`
+width: 30%; 
+margin-left: 10%;
+
+@media only screen and (max-width: ${screenSizes.lg}){
+flex-direction: column;
+margin-left: 0;
+}
+@media only screen and (max-width: ${screenSizes.sm}){
+  width: 80vw;
+  margin-left: 0;
+}
+`
+
+const FeatureDescriptionContainer = styled.div`
+width: 42%; 
+font-size: 20px;
+font-weight: 600;
+
+& .highlight {
+  color: #3182ce;
+}
+
+@media only screen and (max-width: ${screenSizes.lg}){
+ font-size: 20px;
+ width: 50%; 
+ margin-top: 20px;
+}
+
+@media only screen and (max-width: ${screenSizes.sm}){
+  width: 80vw;
+}
+`
+
+const ButtonContainer = styled.div`
+margin: 80px auto 0px auto;
+width: fit-content;
+`
+
+const MiddleSection = styled.div`
+height: 600px;
+padding: 50px 0;
+`
+
+const ImageGradientUpper = styled.div`
+position: absolute;
+left: 0;
+height: 80px;
+width: 100%;
+z-index: 0;
+background: linear-gradient(to top, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%);
+`
+
+const ImageGradientLower = styled.div`
+position: absolute;
+left: 0;
+transform: translateY(520px);
+height: 80px;
+width: 100%;
+z-index: 0;
+background: linear-gradient(to bottom, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%);
+`
+
+const SectionTitle = styled.div`
+margin: 0px auto;
+margin-top: 100px;
+font-weight: 500;
+color: white;
 display: flex;
 justify-content: center;
+font-size: 40px;
 
-@media only screen and (max-width: ${screenSizes.md}){
- font-size: 20px;
-}
-
-@media only screen and (max-width: ${screenSizes.sm}){
- font-size: 16px;
+@media only screen and (max-width: ${screenSizes.lg}){
+ font-size: 32px; 
 }
 `
 
-const NavigationContainer = styled.div`
-display: ${props => props.active ? "flex" : "none"};
-position: relative;
-height: 300px;
-width: 200px;
-margin: 0 20px;
-flex-direction:column;
-justify-content:center;
-transform:translateY(-30px);
-color: #FFFFFF;
+const ElementContainer = styled.div`
+margin-top: 100px;
+display: flex;
+justify-content: space-evenly;
 
-& a {
-  font-size: 40px;
-  font-family: "Arial Black";
-  transition: 0.3s;
-
-  @media only screen and (max-width: ${screenSizes.md}){
-  font-size: 18px;
-  }
-}
-
-@media only screen and (max-width: ${screenSizes.md}){
- font-size: 16px;
- width: 150px;
-}
-
-@media only screen and (max-width: ${screenSizes.sm}){
- font-size: 14px;
- width: 100px;
+@media only screen and (max-width: ${screenSizes.lg}){
+ flex-direction: column;
+ justify-content: center;
+ margin-top: 50px;
 }
 `
 
-const TiltUpperLeftLine = styled.div`
-height: 30px;
-width: 100%;
-border-left: 3px solid #3182ce;
-border-bottom: 3px solid #3182ce;
-animation: ${props => fadeInSkew(props.translateX, props.skew)} 0.4s ease-out 1 forwards;
+const ElementCard = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+@media only screen and (max-width: ${screenSizes.lg}){
+  flex-direction: row;
+  width: 250px;
+  justify-content: space-between;
+  margin: 20px auto;
+}
 `
 
-const TiltUpperRightLine = styled.div`
-height: 30px;
-width: 100%;
-border-right: 3px solid #3182ce;
-border-bottom: 3px solid #3182ce;
-animation: ${props => fadeInSkew(props.translateX, props.skew)} 0.4s ease-out 1 forwards;
+const ElementBox = styled.div`
+height: 120px;
+width: 120px;
+background-color: white;
+transform: rotate(-45deg);
+border-radius: 14px;
+box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+
+& .straighten {
+  transform: rotate(45deg) scale(0.7);
+}
+
+@media only screen and (max-width: ${screenSizes.lg}){
+  height: 60px;
+  width: 60px;
+}
 `
 
-const TiltBottomRightLine = styled.div`
-height: 30px;
-width: 100%;
-border-right: 3px solid #3182ce;
-border-top: 3px solid #3182ce;
-animation: ${props => fadeInSkew(props.translateX, props.skew)} 0.4s ease-out 1 forwards;
+const ElementTitle = styled.div`
+color: white;
+font-size: 28px;
+margin-top: 50px;
+
+@media only screen and (max-width: ${screenSizes.lg}){
+  font-size: 24px;
+  margin-top: 0px;
+}
 `
 
-const TiltBottomLeftLine = styled.div`
-height: 30px;
-width: 100%;
-border-left: 3px solid #3182ce;
-border-top: 3px solid #3182ce;
-animation: ${props => fadeInSkew(props.translateX, props.skew)} 0.4s ease-out 1 forwards;
+const ValueSection = styled.div`
+margin-top: 120px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 `
 
-const BackgroundWave = styled.div`
-width: 0px;
-height: 0px;
-position: absolute;
-background-color: #3182ce;
-border-radius: 50%;
-transform: translateY(-20px);
-animation-name: ${props => props.active ? expandWave : ""};
-animation-duration: 1s;
-animation-iteration-count: 1;
-animation-timing-function: ease-out;
+const ValueContainer = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+
+@media only screen and (max-width: ${screenSizes.lg}){
+  flex-direction: column;
+}
 `
 
-const SeparateBox = styled.div`
-width: 100%;
-height: 0;
-margin: 0 0;
-animation: ${verticalExpand} 0.4s ease-out 1 0.4s forwards;
+const ValueCard = styled.div`
+margin: 100px 25px 0px 25px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 `
 
+const ValueTitle = styled.div`
+font-size: 28px;
+font-weight: 300;
+text-align: center;
+`
 
-const IndexPage = () => {
-  const [enableWave, setEnableWave] = useState(false);
-  const [enableBranch, setEnableBranch] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+const TitleBar = styled.div`
+width: 120px;
+margin-top: 10px;
+border: 3px solid #3182ce;
+background-color:#3182ce;
+border-radius: 3px;
+`
 
-  useEffect(() => {
-    if (typeof window !== `undefined`) {
-      const { isMobile } = require("../utils/isMobile");
-      setIsMobile(isMobile);
+const ValueDescription = styled.div`
+margin-top: 30px;
+text-align: center;
+color: #343434;
+
+@media only screen and (max-width: ${screenSizes.lg}){
+  width: 300px;
+}
+`
+
+const HomePage = ({ location }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      allValuesJson {
+        nodes {
+          title
+          description
+        }
+      }
     }
-  }, []);
+  `)
 
   return (
-    <CoverPage>
-      <GlobalStyle />
-      <SEO title="Cover" />
-      {
-        !isMobile ? <Video src='/nexus.mp4' />: null
-      }
-      {/* <ImageBGContainer>
-        <Image filename={'ascend'} />
-      </ImageBGContainer> */}
-      <BackgroundWave active={enableWave} onAnimationEnd={() => setEnableWave(false)} />
+    <Layout location={location}>
+      <SEO title="Home" />
+      <KeyFeatureSection>
+      {/* <Video src='/nexus.mp4' /> */}
+        <FeatureItem>
+          <FeatureImageContainer>
+            <ModernIllustration />
+          </FeatureImageContainer>
+          <FeatureDescriptionContainer>
+            Build <span className="highlight">Modern</span> Website that take your business to the next level.
+        </FeatureDescriptionContainer>
+        </FeatureItem>
 
-      <NavigationContainer active={enableBranch}>
-        <AniLink fade duration={0.4} to="/home" >Home</AniLink>
-        <TiltUpperLeftLine translateX={100} skew={35} />
-        <SeparateBox />
-        <TiltBottomLeftLine translateX={100} skew={-35} />
-        <AniLink fade duration={0.4} to="/about">About</AniLink>
-      </NavigationContainer>
+        <FeatureItem>
+          <FeatureImageContainer>
+            <OptimizeIllustration />
+          </FeatureImageContainer>
+          <FeatureDescriptionContainer>
+            High quality media content with great website <span className="highlight">Performance</span>.
+        </FeatureDescriptionContainer>
+        </FeatureItem>
 
-      <CentralContainer>
-      <TitleContainer>
-          <div>DW</div> <div>Interactive</div> <div>Dev</div>
-      </TitleContainer>
-        <ButtonContainer onClick={() => {
-          setEnableWave(true);
-          setEnableBranch(true);
-        }}>
-          <PlayButton style={{ paddingLeft: 4 }} />
-        </ButtonContainer>
-      </CentralContainer>
+        <FeatureItem>
+          <FeatureImageContainer>
+            <BuildIllustration />
+          </FeatureImageContainer>
+          <FeatureDescriptionContainer>
+            Highly <span className="highlight">Secure</span> by default, build whatever you need.
+        </FeatureDescriptionContainer>
+        </FeatureItem>
 
-      <NavigationContainer active={enableBranch}>
-        <AniLink fade duration={0.4} to="/services" style={{ textAlign: "right" }}>Services</AniLink>
-        <TiltUpperRightLine translateX={-100} skew={-35} />
-        <SeparateBox />
-        <TiltBottomRightLine translateX={-100} skew={35} />
-        <AniLink fade duration={0.4} to="/contact" style={{ textAlign: "right" }}>Contact</AniLink>
-      </NavigationContainer>
-    </CoverPage>
+      </KeyFeatureSection>
+
+      <ButtonContainer>
+        <AniLink fade duration={0.4} to="/services" className="navLink" >
+          <CustomButton aria-label="services">Get Started</CustomButton>
+        </AniLink>
+      </ButtonContainer>
+
+      <MiddleSection>
+        <ImageGradientUpper />
+        <Image filename={'mid-banner'} wrapperStyle={{ backgroundColor: '#3182CE', position: "absolute", left: 0, width: "100%", height: "600px", zIndex: -1 }} imgStyle={{ opacity: 0.5 }} />
+        <ImageGradientLower />
+        <SectionTitle>What Set Us Apart</SectionTitle>
+        <ElementContainer>
+          <ElementCard>
+            <ElementBox><RocketIcon className="straighten" /></ElementBox>
+            <ElementTitle>FAST</ElementTitle>
+          </ElementCard>
+          <ElementCard>
+            <ElementBox><TechIcon className="straighten" /></ElementBox>
+            <ElementTitle>INTERACTIVE</ElementTitle>
+          </ElementCard>
+          <ElementCard>
+            <ElementBox><ScaleIcon className="straighten" /></ElementBox>
+            <ElementTitle>SCALABLE</ElementTitle>
+          </ElementCard>
+        </ElementContainer>
+      </MiddleSection>
+
+      <ValueSection>
+        <PrimaryTitle>Our Value</PrimaryTitle>
+        <ValueContainer>
+          {
+            data.allValuesJson.nodes.map((node, idx) => {
+              return (
+                <ValueCard key={idx}>
+                  <ValueTitle>{node.title.toUpperCase()}</ValueTitle>
+                  <TitleBar></TitleBar>
+                  <ValueDescription>{node.description}</ValueDescription>
+                </ValueCard>
+              )
+            })
+          }
+        </ValueContainer>
+      </ValueSection>
+
+      <ButtonContainer>
+        <AniLink fade duration={0.4} to="/contact" className="navLink" >
+          <CustomButton aria-label="contact">Let's Chat</CustomButton>
+        </AniLink>
+      </ButtonContainer>
+    </Layout>
   )
 }
 
-export default IndexPage
+export default HomePage

@@ -37,17 +37,17 @@ margin-right: 10%;
 `
 
 const Header = ({ siteTitle, location }) => {
-
+  // console.log(location.pathname)
   return (
     <HeaderContainer>
       <LogoContainer >
-        <AniLink fade duration={0.4} to="/" className="navLink" style={{display: "flex", alignItems: "center", fontSize: "50px"}}>
-          <Logo width="120px"/><div style={{ fontFamily: "Arial Black, Gadget, sans-serif", color:"white", background:"#3297FD", padding: "18px 40px"}}>DW Interactive Dev</div>
+        <AniLink fade duration={0.4} to="/" className="navLink" style={{ display: "flex", alignItems: "center", fontSize: "50px" }}>
+          <Logo width="120px" /><div style={{ fontFamily: "Arial Black, Gadget, sans-serif", color: "white", background: "#3297FD", padding: "18px 40px" }}>DW Interactive Dev</div>
         </AniLink>
       </LogoContainer>
 
       <NavLinkContainer>
-        <AniLink fade duration={0.4} to="/home" className={`navLink ${location.pathname === "/home" ? 'highlighted' : ''}`} >Home</AniLink>
+        <AniLink fade duration={0.4} to="/" className={`navLink ${location.pathname === "/" ? 'highlighted' : ''}`} >Home</AniLink>
         <AniLink fade duration={0.4} to="/services" className={`navLink ${location.pathname === "/services" ? 'highlighted' : ''}`}>Services</AniLink>
         <AniLink fade duration={0.4} to="/blog" className={`navLink ${location.pathname.startsWith("/blog") ? 'highlighted' : ''}`}>Blog</AniLink>
         <AniLink fade duration={0.4} to="/about" className={`navLink ${location.pathname === "/about" ? 'highlighted' : ''}`}>About</AniLink>
