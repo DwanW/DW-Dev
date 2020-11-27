@@ -1,5 +1,11 @@
 import React, { useState } from "react"
 import styled, { keyframes } from 'styled-components'
+import {Link} from "gatsby"
+
+const fadeDown = keyframes`
+0% { transform: translateY(-50px); opacity: 0;}
+100% { transform: translateY(0px); opacity: 1; }
+`
 
 const DropDownContainer = styled.div`
 position: relative;
@@ -36,15 +42,23 @@ transition: 0.4s;
 
 const DropDownList = styled.div`
 position: absolute;
-opacity: 1;
+background: radial-gradient(circle at bottom, #3182ce, #3182ce 50%, #3182ce 65%, #8893df 100%);
+padding: 20px;
 transition: 0.4;
 display: flex;
 flex-direction: column;
-top: 100%;
+align-items: center;
+top: 150%;
 right: 0;
+width: 90vw;
+z-index: 2;
+color: #FFFFFF;
+font-size: 28px;
+line-height: 40px;
+animation: ${fadeDown} ease-in-out 0.3s 1 forwards;
 `
 
-const DropDown = ({children, className}) => {
+const DropDown = ({ className}) => {
     const [isOpen, setIsOpen] = useState(false)
 
     const toggleMenu = () => {
@@ -59,8 +73,13 @@ const DropDown = ({children, className}) => {
                 <MenuBar className={isOpen? "mid": ""}/>
                 <MenuBar className={isOpen? "bot": ""}/>
             </DropdownIconContainer>
-            { isOpen? <DropDownList >
-                {children}
+            { isOpen? 
+            <DropDownList>
+                <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
+                <Link to="/services"  onClick={() => setIsOpen(false)}>Services</Link>
+                <Link to="/blog" onClick={() => setIsOpen(false)}>Blog</Link>
+                <Link to="/about" onClick={() => setIsOpen(false)}>About</Link>
+                <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
             </DropDownList> : null }
         </DropDownContainer>
     )

@@ -37,9 +37,7 @@ padding: 12px 25px;
 font-size: 36px;
 
 @media only screen and (max-width: ${screenSizes.lg}){
-  display: flex;
-  font-size: 30px;
-  padding: 9px 20px;
+  display: none;
 }
 `
 
@@ -63,6 +61,10 @@ margin-right: 10%;
 }
 `
 
+const DropDownContainer = styled.div`
+margin-right: 3%;
+`
+
 const Header = ({ siteTitle, location }) => {
   // console.log(location.pathname)
   return (
@@ -80,13 +82,9 @@ const Header = ({ siteTitle, location }) => {
         <AniLink fade duration={0.4} to="/about" className={`navLink ${location.pathname === "/about" ? 'highlighted' : ''}`}>About</AniLink>
         <AniLink fade duration={0.4} to="/contact" className={`navLink ${location.pathname === "/contact" ? 'highlighted' : ''}`} >Contact</AniLink>
       </NavLinkContainer>
-      <DropDown className="mobile-only">
-        <AniLink fade duration={0.4} to="/" className={`navLink ${location.pathname === "/" ? 'highlighted' : ''}`} >Home</AniLink>
-        <AniLink fade duration={0.4} to="/services" className={`navLink ${location.pathname === "/services" ? 'highlighted' : ''}`}>Services</AniLink>
-        <AniLink fade duration={0.4} to="/blog" className={`navLink ${location.pathname.startsWith("/blog") ? 'highlighted' : ''}`}>Blog</AniLink>
-        <AniLink fade duration={0.4} to="/about" className={`navLink ${location.pathname === "/about" ? 'highlighted' : ''}`}>About</AniLink>
-        <AniLink fade duration={0.4} to="/contact" className={`navLink ${location.pathname === "/contact" ? 'highlighted' : ''}`} >Contact</AniLink>
-      </DropDown>
+      <DropDownContainer className="mobile-only">
+        <DropDown />
+      </DropDownContainer>
     </HeaderContainer>
   )
 }

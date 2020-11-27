@@ -74,9 +74,9 @@ const Footer = () => (
           <LinkContainer><a href="https://twitter.com/Dwan87734256" target="_blank" aria-label="twitter" rel="noreferrer" ><TwitterIcon fill="white"/></a></LinkContainer>
         </MediaLinkContainer>
         <FooterNavLinkContainer>
-          <AniLink fade duration={0.4} to="/" className="navLink" >Home</AniLink>
-          <AniLink fade duration={0.4} to="/services" className="navLink">Services</AniLink>
-          <AniLink fade duration={0.4} to="/contact" className="navLink" >Contact</AniLink>
+          <AniLink fade duration={0.3} to="/" className="navLink" >Home</AniLink>
+          <AniLink fade duration={0.3} to="/services" className="navLink">Services</AniLink>
+          <AniLink fade duration={0.3} to="/contact" className="navLink" >Contact</AniLink>
         </FooterNavLinkContainer>
   </FooterContainer>
 )
