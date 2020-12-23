@@ -178,7 +178,7 @@ const ContactPage = ({ location }) => {
         <ContactSectionTitle>Contact Us</ContactSectionTitle>
         <ContactCard>
           <ContactTarget>General Contact</ContactTarget>
-          <ContactAddress>info@DWdev.com</ContactAddress>
+          <ContactAddress>dwanwangdev@gmail.com</ContactAddress>
         </ContactCard>
         <MediaLinkContainer>
           <LinkContainer><a href="https://www.facebook.com/dwan.wang.585" target="_blank" aria-label="facebook" rel="noreferrer" ><FaceBookIcon fill="#3182CE"/></a></LinkContainer>
