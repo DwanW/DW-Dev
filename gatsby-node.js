@@ -1,6 +1,21 @@
 const { createFilePath } = require('gatsby-source-filesystem')
 const path = require('path')
 
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+    const { createNodeField } = actions
+    // fmImagesToRelative(node) // convert image paths for gatsby images
+  
+    if (node.internal.type === `MarkdownRemark`) {
+      const value = createFilePath({ node, getNode })
+      createNodeField({
+        name: `slug`,
+        node,
+        value,
+      })
+    }
+  }
+
 exports.createPages = ({ actions, graphql }) => {
     const { createPage } = actions
 
@@ -13,6 +28,9 @@ exports.createPages = ({ actions, graphql }) => {
                     frontmatter {
                         body
                         title
+                    }
+                    fields {
+                        slug
                     }
                 }
             }
@@ -31,9 +49,9 @@ exports.createPages = ({ actions, graphql }) => {
             createPage({
                 path: edge.node.fields.slug,
                 tags: edge.node.frontmatter.tags,
-                // component: path.resolve(
-                //     `src/templates`
-                // )
+                component: path.resolve(
+                    `src/templates/blog.js`
+                ),
                 context: {
                     id,
                 }
@@ -41,17 +59,3 @@ exports.createPages = ({ actions, graphql }) => {
         })
     })
 }
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-    const { createNodeField } = actions
-    // fmImagesToRelative(node) // convert image paths for gatsby images
-  
-    if (node.internal.type === `MarkdownRemark`) {
-      const value = createFilePath({ node, getNode })
-      createNodeField({
-        name: `slug`,
-        node,
-        value,
-      })
-    }
-  }
