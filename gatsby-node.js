@@ -4,7 +4,6 @@ const path = require('path')
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
     const { createNodeField } = actions
-    // fmImagesToRelative(node) // convert image paths for gatsby images
   
     if (node.internal.type === `MarkdownRemark`) {
       const value = createFilePath({ node, getNode })
@@ -26,7 +25,6 @@ exports.createPages = ({ actions, graphql }) => {
                 node {
                     id
                     frontmatter {
-                        body
                         title
                     }
                     fields {
@@ -48,12 +46,12 @@ exports.createPages = ({ actions, graphql }) => {
             const id = edge.node.id
             createPage({
                 path: edge.node.fields.slug,
-                tags: edge.node.frontmatter.tags,
                 component: path.resolve(
                     `src/templates/blog.js`
                 ),
                 context: {
                     id,
+                    slug: edge.node.fields.slug
                 }
             })
         })

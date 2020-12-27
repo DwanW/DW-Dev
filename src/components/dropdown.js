@@ -50,7 +50,7 @@ flex-direction: column;
 align-items: center;
 top: 150%;
 right: 0;
-width: 90vw;
+width: 94vw;
 z-index: 2;
 color: #FFFFFF;
 font-size: 28px;

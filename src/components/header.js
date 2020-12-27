@@ -63,6 +63,7 @@ margin-right: 10%;
 
 const DropDownContainer = styled.div`
 margin-right: 3%;
+z-index: 99;
 `
 
 const Header = ({ siteTitle, location }) => {
