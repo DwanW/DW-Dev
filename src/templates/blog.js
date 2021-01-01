@@ -60,7 +60,7 @@ margin-top: 64px;
 `
 
 
-const Blog = ({ data, pageContext, location}) => {
+const Blog = ({ data, location}) => {
     const blogData = data.markdownRemark.frontmatter
 
     return (
