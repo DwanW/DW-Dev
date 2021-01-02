@@ -6,7 +6,6 @@ import screenSizes from '../data/screenSizes'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Image from "../components/image"
-import convertISOString from '../utils/utils'
 
 const Title = styled.h1`
 text-align: center;
@@ -89,13 +88,13 @@ const BlogPage = ({ location, data }) => {
           blogEdges.map((edge) => 
             <BlogItemContainer key={edge.node.id}>
               <BlogImageContainer>
-                <Link to={edge.node.fields.slug}><Image filename={edge.node.frontmatter.cover} /></Link>
+                <Link to={edge.node.fields.slug}><Image filename={edge.node.frontmatter.cover.replace("/img/", "")} /></Link>
               </BlogImageContainer>
               <BlogDescriptionContainer>
                 <Link to={edge.node.fields.slug}><MetaTitle>{edge.node.frontmatter.title}</MetaTitle></Link>
                 <MetaDescription>by {edge.node.frontmatter.author}</MetaDescription>
                 <MetaDescription>{edge.node.timeToRead} min read</MetaDescription>
-                <MetaDate>{convertISOString(edge.node.frontmatter.date)}</MetaDate>
+                <MetaDate>{edge.node.frontmatter.date}</MetaDate>
               </BlogDescriptionContainer>
             </BlogItemContainer>
           )
@@ -119,7 +118,7 @@ export const pageQuery = graphql`
             }
             frontmatter {
               templateKey
-              date
+              date(formatString: "MMMM DD, YYYY")
               cover
               description
               title

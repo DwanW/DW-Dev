@@ -67,7 +67,7 @@ const Blog = ({ data, location}) => {
         <Layout location={location}>
             <BlogContainer>
                 <BlogCoverContainer>
-                    <Image filename={blogData.cover} wrapperStyle={{height: '100%', width: "100%", position: 'absolute', zIndex: '-1'}}/>
+                    <Image filename={blogData.cover.replace("/img/", "")} wrapperStyle={{height: '100%', width: "100%", position: 'absolute', zIndex: '-1'}}/>
                     <Overlay/>
                     <MetaContainer>
                         <MetaTitle>{blogData.title}</MetaTitle>
@@ -92,7 +92,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         cover
-        date
+        date(formatString: "MMMM DD, YYYY")
         author
       }
       fields {
