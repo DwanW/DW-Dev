@@ -109,7 +109,7 @@ export default BlogPage
 
 export const pageQuery = graphql`
   query BlogPage {
-    allMarkdownRemark(limit: 10) {
+    allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, limit: 10) {
         edges {
           node {
             id

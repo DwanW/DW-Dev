@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
+import { motion } from "framer-motion"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -31,7 +32,7 @@ margin-top: 100px;
 }
 `
 
-const FeatureItem = styled.div`
+const FeatureItem = styled(motion.div)`
 display: flex;
 width: 100%;
 margin-top: 60px;
@@ -87,12 +88,12 @@ font-weight: 600;
 }
 `
 
-const ButtonContainer = styled.div`
+const ButtonContainer = styled(motion.div)`
 margin: 80px auto 0px auto;
 width: fit-content;
 `
 
-const MiddleSection = styled.div`
+const MiddleSection = styled(motion.div)`
 height: 600px;
 padding: 50px 0;
 `
@@ -226,7 +227,7 @@ border-radius: 3px;
 
 const ValueDescription = styled.div`
 margin-top: 30px;
-text-align: center;
+text-align: left;
 color: #343434;
 
 @media only screen and (max-width: ${screenSizes.lg}){
@@ -235,6 +236,7 @@ color: #343434;
 `
 
 const HomePage = ({ location }) => {
+
   const data = useStaticQuery(graphql`
     query {
       allValuesJson {
@@ -250,8 +252,8 @@ const HomePage = ({ location }) => {
     <Layout location={location}>
       <SEO title="Home" />
       <KeyFeatureSection>
-      {/* <Video src='/nexus.mp4' /> */}
-        <FeatureItem>
+        {/* <Video src='/nexus.mp4' /> */}
+        <FeatureItem initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.4 }}>
           <FeatureImageContainer>
             <ModernIllustration />
           </FeatureImageContainer>
@@ -260,7 +262,7 @@ const HomePage = ({ location }) => {
         </FeatureDescriptionContainer>
         </FeatureItem>
 
-        <FeatureItem>
+        <FeatureItem initial={{ x: 50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.4 }}>
           <FeatureImageContainer>
             <OptimizeIllustration />
           </FeatureImageContainer>
@@ -269,7 +271,7 @@ const HomePage = ({ location }) => {
         </FeatureDescriptionContainer>
         </FeatureItem>
 
-        <FeatureItem>
+        <FeatureItem initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.8 }}>
           <FeatureImageContainer>
             <BuildIllustration />
           </FeatureImageContainer>
@@ -280,7 +282,7 @@ const HomePage = ({ location }) => {
 
       </KeyFeatureSection>
 
-      <ButtonContainer>
+      <ButtonContainer initial={{ opacity: 0 }} animate={{ y: -30, opacity: 1 }} transition={{ delay: 1.2 }}>
         <AniLink fade duration={0.4} to="/services" className="navLink" >
           <CustomButton aria-label="services">Get Started</CustomButton>
         </AniLink>
@@ -292,15 +294,24 @@ const HomePage = ({ location }) => {
         <ImageGradientLower />
         <SectionTitle>What Set Us Apart</SectionTitle>
         <ElementContainer>
-          <ElementCard>
+          <ElementCard
+            data-aos="zoom-in"
+            data-aos-delay="0"
+          >
             <ElementBox><RocketIcon className="straighten" /></ElementBox>
             <ElementTitle>FAST</ElementTitle>
           </ElementCard>
-          <ElementCard>
+          <ElementCard
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
             <ElementBox><TechIcon className="straighten" /></ElementBox>
             <ElementTitle>INTERACTIVE</ElementTitle>
           </ElementCard>
-          <ElementCard>
+          <ElementCard
+            data-aos="zoom-in"
+            data-aos-delay="400"
+          >
             <ElementBox><ScaleIcon className="straighten" /></ElementBox>
             <ElementTitle>SCALABLE</ElementTitle>
           </ElementCard>
@@ -313,7 +324,11 @@ const HomePage = ({ location }) => {
           {
             data.allValuesJson.nodes.map((node, idx) => {
               return (
-                <ValueCard key={idx}>
+                <ValueCard
+                  key={idx}
+                  data-aos="fade-up"
+                  data-aos-delay={`${idx * 200}`}
+                >
                   <ValueTitle>{node.title.toUpperCase()}</ValueTitle>
                   <TitleBar></TitleBar>
                   <ValueDescription>{node.description}</ValueDescription>

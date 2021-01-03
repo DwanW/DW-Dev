@@ -1,6 +1,8 @@
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import Header from "./header"
 import Footer from "./footer"
@@ -39,6 +41,12 @@ const Layout = ({ children, location }) => {
       }
     }
   `)
+
+  useEffect(() => {
+    if (typeof window !== `undefined`) {
+      AOS.init({ disable: 'mobile', animatedClassName: 'aos-animate' });
+    }
+  }, []);
 
   return (
     <LayoutContainer>
