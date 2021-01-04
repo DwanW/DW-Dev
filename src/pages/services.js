@@ -219,7 +219,12 @@ const ServicesPage = ({ location }) => {
         {
           data.allServicesJson.nodes.map((node, idx) => {
             return (
-              <ServiceContainer key={idx} >
+              <ServiceContainer 
+                key={idx}
+                data-aos={`${idx % 2 === 0? 'fade-right': 'fade-left'}`}
+                data-aos-easing="ease-out-quart"
+                data-aos-duration="1000"
+              >
                 <Image filename={node.image} wrapperStyle={{ width: "50%", borderRadius: 25, transform: idx % 2 === 0 ? "translateX(-20%)" : "translateX(20%)" }} imgStyle={{ opacity: 0.8 }} />
                 <ServiceCardContainer index={idx}>
                   <ServiceCardTitle>{node.title}</ServiceCardTitle>
@@ -242,7 +247,12 @@ const ServicesPage = ({ location }) => {
         {
           processData.map((node, idx) => {
             return (
-              <StepContainer key={idx}>
+              <StepContainer 
+                key={idx}
+                data-aos="zoom-in-up"
+                data-aos-easing="ease-in-out"
+                data-aos-duration="600"
+              >
                 <StepHeader>
                   <StepIcon>{node.icon}</StepIcon>
                   <StepTitle>{node.title}</StepTitle>
