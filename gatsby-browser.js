@@ -1,7 +1,10 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
+const React = require("react")
+const { ParallaxProvider } = require("react-scroll-parallax")
 
-// You can delete this file if you're not using it
+exports.wrapRootElement = ({ element }) => {
+  return (
+    <ParallaxProvider>
+      {element}
+    </ParallaxProvider>
+  )
+}

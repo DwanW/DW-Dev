@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from 'styled-components'
+import Hero from "..//components/Hero"
 import Image from "../components/image"
 import CustomButton from '../components/CustomButton';
 import PrimaryTitle from '../components/PrimaryTitle';
@@ -251,9 +252,12 @@ const HomePage = ({ location }) => {
   return (
     <Layout location={location}>
       <SEO title="Home" />
+      <Hero />
       <KeyFeatureSection>
         {/* <Video src='/nexus.mp4' /> */}
-        <FeatureItem initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.4 }}>
+        <FeatureItem 
+        data-aos="zoom-in-right"
+        data-aos-delay="0">
           <FeatureImageContainer>
             <ModernIllustration />
           </FeatureImageContainer>
@@ -262,7 +266,9 @@ const HomePage = ({ location }) => {
         </FeatureDescriptionContainer>
         </FeatureItem>
 
-        <FeatureItem initial={{ x: 50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.4 }}>
+        <FeatureItem 
+        data-aos="zoom-in-right"
+        data-aos-delay="200">
           <FeatureImageContainer>
             <OptimizeIllustration />
           </FeatureImageContainer>
@@ -271,7 +277,9 @@ const HomePage = ({ location }) => {
         </FeatureDescriptionContainer>
         </FeatureItem>
 
-        <FeatureItem initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.8 }}>
+        <FeatureItem 
+        data-aos="zoom-in-right"
+        data-aos-delay="400">
           <FeatureImageContainer>
             <BuildIllustration />
           </FeatureImageContainer>
@@ -282,7 +290,10 @@ const HomePage = ({ location }) => {
 
       </KeyFeatureSection>
 
-      <ButtonContainer initial={{ opacity: 0 }} animate={{ y: -30, opacity: 1 }} transition={{ delay: 1.2 }}>
+      <ButtonContainer
+        data-aos="zoom-in"
+        data-aos-delay="0"
+      >
         <AniLink fade duration={0.4} to="/services" className="navLink" >
           <CustomButton aria-label="services">Get Started</CustomButton>
         </AniLink>
