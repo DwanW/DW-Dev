@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Parallax } from 'react-scroll-parallax';
-import {isMobile} from '../utils/isMobile'
 import screenSizes from '../data/screenSizes'
 
 import WebIcon from '../icons/web.svg'
@@ -106,8 +105,9 @@ border-radius: 50%;
 const Hero = () => {
     const [isParallaxDisabled, setParallaxDisabled] = useState(false)
     useEffect(() => {
-        if(isMobile){
-            setParallaxDisabled(true)
+        if(typeof window !== 'undefined'){
+            const { isMobile } = require("../utils/isMobile");
+            setParallaxDisabled(isMobile)
         }
     }, [])
 
