@@ -38,16 +38,14 @@ module.exports = {
       },
     },
     {
-      resolve: '@slixites/gatsby-plugin-google-fonts',
+      resolve: "@slixites/gatsby-plugin-google-fonts",
       options: {
-        fonts: [
-          `work sans`,
-        ],
-        display: 'swap',
+        fonts: [`work sans`],
+        display: "swap",
         preconnect: true,
         attributes: {
-            rel: 'stylesheet preload',
-            as: 'style',
+          rel: "stylesheet preload",
+          as: "style",
         },
       },
     },
@@ -55,24 +53,25 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /.svg$/
-        }
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-mailchimp',
-      options: {
-          endpoint: 'https://gmail.us2.list-manage.com/subscribe/post?u=b9534d380f45405c93f212408&amp;id=aa3682903e',
-          timeout: 3500,
+          include: /.svg$/,
+        },
       },
     },
     {
-      resolve: 'gatsby-plugin-crisp-chat',
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint:
+          "https://gmail.us2.list-manage.com/subscribe/post?u=b9534d380f45405c93f212408&amp;id=aa3682903e",
+        timeout: 3500,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-crisp-chat",
       options: {
         websiteId: "d99b4324-67ee-4892-922a-d24d3cf56593",
         enableDuringDevelop: true, // Optional. Disables Crisp Chat during gatsby develop. Defaults to true.
         defer: false, // Optional. Sets the Crisp loading script to defer instead of async. Defaults to false.
-        enableImprovedAccessibility: true // Optional. Sets aria-label attribute on pop-up icon for screen readers. Defaults to true.
+        enableImprovedAccessibility: true, // Optional. Sets aria-label attribute on pop-up icon for screen readers. Defaults to true.
       },
     },
     {

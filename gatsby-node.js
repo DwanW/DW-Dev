@@ -1,59 +1,56 @@
-const { createFilePath } = require('gatsby-source-filesystem')
-const path = require('path')
-
+const { createFilePath } = require("gatsby-source-filesystem")
+const path = require("path")
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-    const { createNodeField } = actions
-  
-    if (node.internal.type === `MarkdownRemark`) {
-      const value = createFilePath({ node, getNode })
-      createNodeField({
-        name: `slug`,
-        node,
-        value,
-      })
-    }
+  const { createNodeField } = actions
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
   }
+}
 
 exports.createPages = ({ actions, graphql }) => {
-    const { createPage } = actions
+  const { createPage } = actions
 
-    return graphql(`
+  return graphql(`
     {
-        allMarkdownRemark {
-            edges {
-                node {
-                    id
-                    frontmatter {
-                        title
-                    }
-                    fields {
-                        slug
-                    }
-                }
+      allMarkdownRemark {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
             }
+            fields {
+              slug
+            }
+          }
         }
+      }
     }
-    `).then((result) => {
-        if(result.errors){
-            result.errors.forEach((e) => console.error(e.toString()))
-            return Promise.reject(result.errors)
-        }
+  `).then(result => {
+    if (result.errors) {
+      result.errors.forEach(e => console.error(e.toString()))
+      return Promise.reject(result.errors)
+    }
 
-        const posts = result.data.allMarkdownRemark.edges
+    const posts = result.data.allMarkdownRemark.edges
 
-        posts.forEach((edge) => {
-            const id = edge.node.id
-            createPage({
-                path: edge.node.fields.slug,
-                component: path.resolve(
-                    `src/templates/blog.js`
-                ),
-                context: {
-                    id,
-                    slug: edge.node.fields.slug
-                }
-            })
-        })
+    posts.forEach(edge => {
+      const id = edge.node.id
+      createPage({
+        path: edge.node.fields.slug,
+        component: path.resolve(`src/templates/blog.js`),
+        context: {
+          id,
+          slug: edge.node.fields.slug,
+        },
+      })
     })
+  })
 }

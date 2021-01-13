@@ -1,7 +1,7 @@
 import React from "react"
-import styled, { keyframes } from 'styled-components'
-import CheckIcon from '../icons/check-mark.svg'
-import WarnIcon from '../icons/warning.svg'
+import styled, { keyframes } from "styled-components"
+import CheckIcon from "../icons/check-mark.svg"
+import WarnIcon from "../icons/warning.svg"
 
 const fadeIn = keyframes`
 0%{opacity: 0}
@@ -10,66 +10,81 @@ const fadeIn = keyframes`
 `
 
 const PrimaryInputWrapper = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 `
 
 const CustomTextArea = styled.textarea`
-background: #FFFFFF;
-border-radius: 6px;
-padding: 5px 10px;
-border: none;
-transition: all 0.3s;
-font-weight: 600;
-font-size: 20px;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-color: #343434;
-margin-top: 15px;
-resize: none;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 5px 10px;
+  border: none;
+  transition: all 0.3s;
+  font-weight: 600;
+  font-size: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #343434;
+  margin-top: 15px;
+  resize: none;
 
-&::placeholder {
-font-weight: 600;
-font-size: 20px; 
-color: #343434;
-opacity: 0.4;
-}
-&:active {
-  outline: none;
-}
-&:focus {
-  outline: none;
-}
+  &::placeholder {
+    font-weight: 600;
+    font-size: 20px;
+    color: #343434;
+    opacity: 0.4;
+  }
+  &:active {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
 `
 
 const InputFeedback = styled.div`
-position: absolute;
-display: flex;
-justify-content: flex-start;
-align-items: center;
-width: 100%;
-height: 30px;
-top: 100%;
-padding: 5px 10px;
-font-size: 14px;
-opacity: 0;
-font-weight: 600;
-animation: ${fadeIn} 3s forwards 1 ease-in-out;
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  top: 100%;
+  padding: 5px 10px;
+  font-size: 14px;
+  opacity: 0;
+  font-weight: 600;
+  animation: ${fadeIn} 3s forwards 1 ease-in-out;
 `
 
-const CustomInputArea = ({ children, inverted, placeholder, message, show = false, success, ...otherProps }) => (
+const CustomInputArea = ({
+  children,
+  inverted,
+  placeholder,
+  message,
+  show = false,
+  success,
+  ...otherProps
+}) => (
   <PrimaryInputWrapper>
-    <CustomTextArea inverted={inverted} placeholder={placeholder} {...otherProps}>{children}</CustomTextArea>
-    {
-      show ? <InputFeedback>
-        {
-          success ? <CheckIcon width="20px" fill="#32CD32" style={{marginRight: 10}} />
-          : <WarnIcon width="20px" fill="red"  style={{marginRight: 10}}/>
-        }
+    <CustomTextArea
+      inverted={inverted}
+      placeholder={placeholder}
+      {...otherProps}
+    >
+      {children}
+    </CustomTextArea>
+    {show ? (
+      <InputFeedback>
+        {success ? (
+          <CheckIcon width="20px" fill="#32CD32" style={{ marginRight: 10 }} />
+        ) : (
+          <WarnIcon width="20px" fill="red" style={{ marginRight: 10 }} />
+        )}
         {message}
-      </InputFeedback> : null
-    }
+      </InputFeedback>
+    ) : null}
   </PrimaryInputWrapper>
 )
 

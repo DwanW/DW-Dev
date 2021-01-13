@@ -9,16 +9,16 @@ import Img from "gatsby-image"
  * component, rather than having to pass the image data down from pages.
  */
 
-const Image = ({filename, wrapperStyle, imgStyle}) => {
+const Image = ({ filename, wrapperStyle, imgStyle }) => {
   const data = useStaticQuery(graphql`
     query {
-      images: allFile(filter: {sourceInstanceName: {eq: "images"}}) {
+      images: allFile(filter: { sourceInstanceName: { eq: "images" } }) {
         edges {
           node {
             name
             relativePath
             childImageSharp {
-              fluid(maxWidth: 500){
+              fluid(maxWidth: 500) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -27,13 +27,21 @@ const Image = ({filename, wrapperStyle, imgStyle}) => {
       }
     }
   `)
-  const image = data.images.edges.find((edgeObj) => edgeObj.node.relativePath.includes(filename))
+  const image = data.images.edges.find(edgeObj =>
+    edgeObj.node.relativePath.includes(filename)
+  )
 
   if (!image) {
     return <div>image query failed</div>
   }
 
-  return <Img fluid={image.node.childImageSharp.fluid} style={wrapperStyle} imgStyle={imgStyle}/>
+  return (
+    <Img
+      fluid={image.node.childImageSharp.fluid}
+      style={wrapperStyle}
+      imgStyle={imgStyle}
+    />
+  )
 }
 
 export default Image

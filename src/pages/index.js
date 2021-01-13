@@ -5,239 +5,240 @@ import { motion } from "framer-motion"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import styled from 'styled-components'
+import styled from "styled-components"
 import Hero from "..//components/Hero"
 import Image from "../components/image"
-import CustomButton from '../components/CustomButton';
-import PrimaryTitle from '../components/PrimaryTitle';
-import screenSizes from '../data/screenSizes'
+import CustomButton from "../components/CustomButton"
+import PrimaryTitle from "../components/PrimaryTitle"
+import screenSizes from "../data/screenSizes"
 // import Video from '../components/video'
 
-import ModernIllustration from '../icons/modern.svg'
-import OptimizeIllustration from '../icons/optimize.svg'
-import BuildIllustration from '../icons/build.svg'
-import RocketIcon from '../icons/flying-rocket.svg'
-import TechIcon from '../icons/tech.svg'
-import ScaleIcon from '../icons/scale.svg'
-
-
+import ModernIllustration from "../icons/modern.svg"
+import OptimizeIllustration from "../icons/optimize.svg"
+import BuildIllustration from "../icons/build.svg"
+import RocketIcon from "../icons/flying-rocket.svg"
+import TechIcon from "../icons/tech.svg"
+import ScaleIcon from "../icons/scale.svg"
 
 const KeyFeatureSection = styled.div`
-margin-top: 100px;
-& .row-reverse {
-  flex-direction: row-reverse;
+  margin-top: 100px;
+  & .row-reverse {
+    flex-direction: row-reverse;
 
-  @media only screen and (max-width: ${screenSizes.lg}){
-  flex-direction: column;
+    @media only screen and (max-width: ${screenSizes.lg}) {
+      flex-direction: column;
+    }
   }
-}
 `
 
 const FeatureItem = styled(motion.div)`
-display: flex;
-width: 100%;
-margin-top: 60px;
-margin-left: auto;
-margin-right: auto;
-justify-content: space-between;
-align-items: center;
+  display: flex;
+  width: 100%;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  align-items: center;
 
-@media only screen and (max-width: ${screenSizes.lg}){
-flex-direction: column;
-}
-
-& .text-right{
-text-align: right;
-
-  @media only screen and (max-width: ${screenSizes.lg}){
-  text-align: left;
+  @media only screen and (max-width: ${screenSizes.lg}) {
+    flex-direction: column;
   }
-}
+
+  & .text-right {
+    text-align: right;
+
+    @media only screen and (max-width: ${screenSizes.lg}) {
+      text-align: left;
+    }
+  }
 `
 
 const FeatureImageContainer = styled.div`
-width: 30%; 
-margin-left: 10%;
+  width: 30%;
+  margin-left: 10%;
 
-@media only screen and (max-width: ${screenSizes.lg}){
-flex-direction: column;
-margin-left: 0;
-}
-@media only screen and (max-width: ${screenSizes.sm}){
-  width: 80vw;
-  margin-left: 0;
-}
+  @media only screen and (max-width: ${screenSizes.lg}) {
+    flex-direction: column;
+    margin-left: 0;
+  }
+  @media only screen and (max-width: ${screenSizes.sm}) {
+    width: 80vw;
+    margin-left: 0;
+  }
 `
 
 const FeatureDescriptionContainer = styled.div`
-width: 42%; 
-font-size: 20px;
-font-weight: 600;
+  width: 42%;
+  font-size: 20px;
+  font-weight: 600;
 
-& .highlight {
-  color: #3182ce;
-}
+  & .highlight {
+    color: #3182ce;
+  }
 
-@media only screen and (max-width: ${screenSizes.lg}){
- font-size: 20px;
- width: 50%; 
- margin-top: 20px;
-}
+  @media only screen and (max-width: ${screenSizes.lg}) {
+    font-size: 20px;
+    width: 50%;
+    margin-top: 20px;
+  }
 
-@media only screen and (max-width: ${screenSizes.sm}){
-  width: 80vw;
-}
+  @media only screen and (max-width: ${screenSizes.sm}) {
+    width: 80vw;
+  }
 `
 
 const ButtonContainer = styled(motion.div)`
-margin: 80px auto 0px auto;
-width: fit-content;
+  margin: 80px auto 0px auto;
+  width: fit-content;
 `
 
 const MiddleSection = styled(motion.div)`
-height: 600px;
-padding: 50px 0;
+  height: 600px;
+  padding: 50px 0;
 `
 
 const ImageGradientUpper = styled.div`
-position: absolute;
-left: 0;
-height: 80px;
-width: 100%;
-z-index: 0;
-background: linear-gradient(to top, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%);
+  position: absolute;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  z-index: 0;
+  background: linear-gradient(to top, rgba(196, 196, 196, 0) 0%, #ffffff 100%);
 `
 
 const ImageGradientLower = styled.div`
-position: absolute;
-left: 0;
-transform: translateY(520px);
-height: 80px;
-width: 100%;
-z-index: 0;
-background: linear-gradient(to bottom, rgba(196, 196, 196, 0) 0%, #FFFFFF 100%);
+  position: absolute;
+  left: 0;
+  transform: translateY(520px);
+  height: 80px;
+  width: 100%;
+  z-index: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(196, 196, 196, 0) 0%,
+    #ffffff 100%
+  );
 `
 
 const SectionTitle = styled.div`
-margin: 0px auto;
-margin-top: 100px;
-font-weight: 500;
-color: white;
-display: flex;
-justify-content: center;
-font-size: 40px;
+  margin: 0px auto;
+  margin-top: 100px;
+  font-weight: 500;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
 
-@media only screen and (max-width: ${screenSizes.lg}){
- font-size: 32px; 
-}
+  @media only screen and (max-width: ${screenSizes.lg}) {
+    font-size: 32px;
+  }
 `
 
 const ElementContainer = styled.div`
-margin-top: 100px;
-display: flex;
-justify-content: space-evenly;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-evenly;
 
-@media only screen and (max-width: ${screenSizes.lg}){
- flex-direction: column;
- justify-content: center;
- margin-top: 50px;
-}
+  @media only screen and (max-width: ${screenSizes.lg}) {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+  }
 `
 
 const ElementCard = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-@media only screen and (max-width: ${screenSizes.lg}){
-  flex-direction: row;
-  width: 250px;
-  justify-content: space-between;
-  margin: 20px auto;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media only screen and (max-width: ${screenSizes.lg}) {
+    flex-direction: row;
+    width: 250px;
+    justify-content: space-between;
+    margin: 20px auto;
+  }
 `
 
 const ElementBox = styled.div`
-height: 120px;
-width: 120px;
-background-color: white;
-transform: rotate(-45deg);
-border-radius: 14px;
-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+  height: 120px;
+  width: 120px;
+  background-color: white;
+  transform: rotate(-45deg);
+  border-radius: 14px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
 
-& .straighten {
-  transform: rotate(45deg) scale(0.7);
-}
+  & .straighten {
+    transform: rotate(45deg) scale(0.7);
+  }
 
-@media only screen and (max-width: ${screenSizes.lg}){
-  height: 60px;
-  width: 60px;
-}
+  @media only screen and (max-width: ${screenSizes.lg}) {
+    height: 60px;
+    width: 60px;
+  }
 `
 
 const ElementTitle = styled.div`
-color: white;
-font-size: 28px;
-margin-top: 50px;
+  color: white;
+  font-size: 28px;
+  margin-top: 50px;
 
-@media only screen and (max-width: ${screenSizes.lg}){
-  font-size: 24px;
-  margin-top: 0px;
-}
+  @media only screen and (max-width: ${screenSizes.lg}) {
+    font-size: 24px;
+    margin-top: 0px;
+  }
 `
 
 const ValueSection = styled.div`
-margin-top: 120px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 const ValueContainer = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-@media only screen and (max-width: ${screenSizes.lg}){
-  flex-direction: column;
-}
+  @media only screen and (max-width: ${screenSizes.lg}) {
+    flex-direction: column;
+  }
 `
 
 const ValueCard = styled.div`
-margin: 100px 25px 0px 25px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  margin: 100px 25px 0px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 const ValueTitle = styled.div`
-font-size: 28px;
-font-weight: 300;
-text-align: center;
+  font-size: 28px;
+  font-weight: 300;
+  text-align: center;
 `
 
 const TitleBar = styled.div`
-width: 120px;
-margin-top: 10px;
-border: 3px solid #3182ce;
-background-color:#3182ce;
-border-radius: 3px;
+  width: 120px;
+  margin-top: 10px;
+  border: 3px solid #3182ce;
+  background-color: #3182ce;
+  border-radius: 3px;
 `
 
 const ValueDescription = styled.div`
-margin-top: 30px;
-text-align: left;
-color: #343434;
+  margin-top: 30px;
+  text-align: left;
+  color: #343434;
 
-@media only screen and (max-width: ${screenSizes.lg}){
-  width: 300px;
-}
+  @media only screen and (max-width: ${screenSizes.lg}) {
+    width: 300px;
+  }
 `
 
 const HomePage = ({ location }) => {
-
   const data = useStaticQuery(graphql`
     query {
       allValuesJson {
@@ -255,75 +256,76 @@ const HomePage = ({ location }) => {
       <Hero />
       <KeyFeatureSection>
         {/* <Video src='/nexus.mp4' /> */}
-        <FeatureItem 
-        data-aos="zoom-in-right"
-        data-aos-delay="0">
+        <FeatureItem data-aos="zoom-in-right" data-aos-delay="0">
           <FeatureImageContainer>
             <ModernIllustration />
           </FeatureImageContainer>
           <FeatureDescriptionContainer>
-            Build <span className="highlight">Modern</span> Website that take your business to the next level.
-        </FeatureDescriptionContainer>
+            Build <span className="highlight">Modern</span> Website that take
+            your business to the next level.
+          </FeatureDescriptionContainer>
         </FeatureItem>
 
-        <FeatureItem 
-        data-aos="zoom-in-right"
-        data-aos-delay="200">
+        <FeatureItem data-aos="zoom-in-right" data-aos-delay="200">
           <FeatureImageContainer>
             <OptimizeIllustration />
           </FeatureImageContainer>
           <FeatureDescriptionContainer>
-            High quality media content with great website <span className="highlight">Performance</span>.
-        </FeatureDescriptionContainer>
+            High quality media content with great website{" "}
+            <span className="highlight">Performance</span>.
+          </FeatureDescriptionContainer>
         </FeatureItem>
 
-        <FeatureItem 
-        data-aos="zoom-in-right"
-        data-aos-delay="400">
+        <FeatureItem data-aos="zoom-in-right" data-aos-delay="400">
           <FeatureImageContainer>
             <BuildIllustration />
           </FeatureImageContainer>
           <FeatureDescriptionContainer>
-            Highly <span className="highlight">Secure</span> by default, build whatever you need.
-        </FeatureDescriptionContainer>
+            Highly <span className="highlight">Secure</span> by default, build
+            whatever you need.
+          </FeatureDescriptionContainer>
         </FeatureItem>
-
       </KeyFeatureSection>
 
-      <ButtonContainer
-        data-aos="zoom-in"
-        data-aos-delay="0"
-      >
-        <AniLink fade duration={0.4} to="/services" className="navLink" >
+      <ButtonContainer data-aos="zoom-in" data-aos-delay="0">
+        <AniLink fade duration={0.4} to="/services" className="navLink">
           <CustomButton aria-label="services">Get Started</CustomButton>
         </AniLink>
       </ButtonContainer>
 
       <MiddleSection>
         <ImageGradientUpper />
-        <Image filename={'mid-banner'} wrapperStyle={{ backgroundColor: '#3182CE', position: "absolute", left: 0, width: "100%", height: "600px", zIndex: -1 }} imgStyle={{ opacity: 0.5 }} />
+        <Image
+          filename={"mid-banner"}
+          wrapperStyle={{
+            backgroundColor: "#3182CE",
+            position: "absolute",
+            left: 0,
+            width: "100%",
+            height: "600px",
+            zIndex: -1,
+          }}
+          imgStyle={{ opacity: 0.5 }}
+        />
         <ImageGradientLower />
         <SectionTitle>What Set Us Apart</SectionTitle>
         <ElementContainer>
-          <ElementCard
-            data-aos="zoom-in"
-            data-aos-delay="0"
-          >
-            <ElementBox><RocketIcon className="straighten" /></ElementBox>
+          <ElementCard data-aos="zoom-in" data-aos-delay="0">
+            <ElementBox>
+              <RocketIcon className="straighten" />
+            </ElementBox>
             <ElementTitle>FAST</ElementTitle>
           </ElementCard>
-          <ElementCard
-            data-aos="zoom-in"
-            data-aos-delay="200"
-          >
-            <ElementBox><TechIcon className="straighten" /></ElementBox>
+          <ElementCard data-aos="zoom-in" data-aos-delay="200">
+            <ElementBox>
+              <TechIcon className="straighten" />
+            </ElementBox>
             <ElementTitle>INTERACTIVE</ElementTitle>
           </ElementCard>
-          <ElementCard
-            data-aos="zoom-in"
-            data-aos-delay="400"
-          >
-            <ElementBox><ScaleIcon className="straighten" /></ElementBox>
+          <ElementCard data-aos="zoom-in" data-aos-delay="400">
+            <ElementBox>
+              <ScaleIcon className="straighten" />
+            </ElementBox>
             <ElementTitle>SCALABLE</ElementTitle>
           </ElementCard>
         </ElementContainer>
@@ -332,26 +334,24 @@ const HomePage = ({ location }) => {
       <ValueSection>
         <PrimaryTitle>Our Value</PrimaryTitle>
         <ValueContainer>
-          {
-            data.allValuesJson.nodes.map((node, idx) => {
-              return (
-                <ValueCard
-                  key={idx}
-                  data-aos="fade-up"
-                  data-aos-delay={`${idx * 200}`}
-                >
-                  <ValueTitle>{node.title.toUpperCase()}</ValueTitle>
-                  <TitleBar></TitleBar>
-                  <ValueDescription>{node.description}</ValueDescription>
-                </ValueCard>
-              )
-            })
-          }
+          {data.allValuesJson.nodes.map((node, idx) => {
+            return (
+              <ValueCard
+                key={idx}
+                data-aos="fade-up"
+                data-aos-delay={`${idx * 200}`}
+              >
+                <ValueTitle>{node.title.toUpperCase()}</ValueTitle>
+                <TitleBar></TitleBar>
+                <ValueDescription>{node.description}</ValueDescription>
+              </ValueCard>
+            )
+          })}
         </ValueContainer>
       </ValueSection>
 
       <ButtonContainer>
-        <AniLink fade duration={0.4} to="/contact" className="navLink" >
+        <AniLink fade duration={0.4} to="/contact" className="navLink">
           <CustomButton aria-label="contact">Let's Chat</CustomButton>
         </AniLink>
       </ButtonContainer>
