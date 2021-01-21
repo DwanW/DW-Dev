@@ -13,7 +13,7 @@ import SEOIcon from "../icons/seo.svg"
 
 const HeroContainer = styled.div`
   position: relative;
-  padding-top: 120px;
+  padding-top: 60px;
 
   @media only screen and (max-width: ${screenSizes.sm}) {
     padding-top: 40px;

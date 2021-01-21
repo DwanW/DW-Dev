@@ -19,6 +19,7 @@ import BuildIllustration from "../icons/build.svg"
 import RocketIcon from "../icons/flying-rocket.svg"
 import TechIcon from "../icons/tech.svg"
 import ScaleIcon from "../icons/scale.svg"
+import theme from "../assets/theme"
 
 const KeyFeatureSection = styled.div`
   margin-top: 100px;
@@ -54,8 +55,8 @@ const FeatureItem = styled(motion.div)`
 `
 
 const FeatureImageContainer = styled.div`
-  width: 30%;
-  margin-left: 10%;
+  width: ${props => props.width};
+  margin-left: ${props => props.leftMargin};
 
   @media only screen and (max-width: ${screenSizes.lg}) {
     flex-direction: column;
@@ -238,6 +239,25 @@ const ValueDescription = styled.div`
   }
 `
 
+const MainFeature = styled.div`
+margin: 120px 0 0px 0;
+padding: 40px 0;
+`
+
+const SubTitle = styled.div`
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-align: center;
+  color: ${theme.uiBlack};
+  margin-top: 20px;
+
+  @media only screen and (max-width: ${screenSizes.sm}) {
+    font-size: 16px;
+    margin: 20px 30px 0 30px;
+  }
+`
+
 const HomePage = ({ location }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -254,10 +274,34 @@ const HomePage = ({ location }) => {
     <Layout location={location}>
       <SEO title="Home" />
       <Hero />
+      <MainFeature>
+        <PrimaryTitle><span style={{color: theme.accentViolet}}>Core web vitals</span> done right</PrimaryTitle>
+        <SubTitle>New Google ranking factor starting May 2021</SubTitle>
+        <FeatureItem>
+        <FeatureImageContainer width="45%" leftMargin="0%">
+            <Image
+              filename={"lighthouse"}
+            />
+          </FeatureImageContainer>
+          <FeatureDescriptionContainer 
+            style={{ backgroundColor: theme.uiGrayLight, padding:"30px", borderRadius: "10px" }}
+            data-aos="fade-up"
+          >
+            <p>Core Web Vitals are <span className="highlight">the latest user experience metrics</span> that will soon become very important Google ranking factors. It focuses on the following specifications:</p>
+            <ul style={{color: theme.accentViolet}}>
+              <li>Loading</li>
+              <li>Interactivity</li>
+              <li>Visual Stability</li>
+            </ul>
+            <p>At DW Interactive Dev, we can help you improve core web vitals and grow your business further</p>
+        </FeatureDescriptionContainer>
+        </FeatureItem>
+      </MainFeature>
+      
       <KeyFeatureSection>
         {/* <Video src='/nexus.mp4' /> */}
         <FeatureItem data-aos="zoom-in-right" data-aos-delay="0">
-          <FeatureImageContainer>
+          <FeatureImageContainer width="30%" leftMargin="10%">
             <ModernIllustration />
           </FeatureImageContainer>
           <FeatureDescriptionContainer>
@@ -267,7 +311,7 @@ const HomePage = ({ location }) => {
         </FeatureItem>
 
         <FeatureItem data-aos="zoom-in-right" data-aos-delay="200">
-          <FeatureImageContainer>
+          <FeatureImageContainer width="30%" leftMargin="10%">
             <OptimizeIllustration />
           </FeatureImageContainer>
           <FeatureDescriptionContainer>
@@ -277,7 +321,7 @@ const HomePage = ({ location }) => {
         </FeatureItem>
 
         <FeatureItem data-aos="zoom-in-right" data-aos-delay="400">
-          <FeatureImageContainer>
+          <FeatureImageContainer width="30%" leftMargin="10%">
             <BuildIllustration />
           </FeatureImageContainer>
           <FeatureDescriptionContainer>
@@ -289,7 +333,7 @@ const HomePage = ({ location }) => {
 
       <ButtonContainer data-aos="zoom-in" data-aos-delay="0">
         <AniLink fade duration={0.4} to="/services" className="navLink">
-          <CustomButton aria-label="services">Get Started</CustomButton>
+          <CustomButton aria-label="services" inverted>Get Started</CustomButton>
         </AniLink>
       </ButtonContainer>
 
@@ -352,7 +396,7 @@ const HomePage = ({ location }) => {
 
       <ButtonContainer>
         <AniLink fade duration={0.4} to="/contact" className="navLink">
-          <CustomButton aria-label="contact">Let's Chat</CustomButton>
+          <CustomButton aria-label="contact" inverted>Let's Chat</CustomButton>
         </AniLink>
       </ButtonContainer>
     </Layout>

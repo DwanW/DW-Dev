@@ -6,7 +6,8 @@ const theme =  {
     uiGrayDark: "#A2B4C5",
     uiGrayLight: "#DFEDFA",
     accentOrange: "#ED892D",
-    accentViolet: "#EE418A"
+    accentViolet: "#EE418A",
+    primaryWhite: "#FFFFFF"
 }
 
 export default theme

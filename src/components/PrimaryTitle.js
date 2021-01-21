@@ -1,9 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 import screenSizes from "../data/screenSizes"
+import theme from '../assets/theme'
 
 const PrimaryTitleContainer = styled.div`
-  color: #3182ce;
+  color: ${theme.uiBlack};
   font-weight: 600;
   font-size: 40px;
   text-align: center;
