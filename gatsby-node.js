@@ -25,6 +25,7 @@ exports.createPages = ({ actions, graphql }) => {
             id
             frontmatter {
               title
+              templateKey
             }
             fields {
               slug
@@ -43,9 +44,10 @@ exports.createPages = ({ actions, graphql }) => {
 
     posts.forEach(edge => {
       const id = edge.node.id
+      const { templateKey } = edge.node.frontmatter
       createPage({
         path: edge.node.fields.slug,
-        component: path.resolve(`src/templates/blog.js`),
+        component: path.resolve(`src/templates/${String(templateKey)}.js`),
         context: {
           id,
           slug: edge.node.fields.slug,

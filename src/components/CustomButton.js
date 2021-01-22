@@ -8,11 +8,11 @@ const PrimaryButton = styled.button`
   align-items: center;
   background: ${props => (props.inverted ? theme.accentOrange : theme.primaryWhite)};
   color: ${props => (props.inverted ? theme.primaryWhite : theme.accentOrange)};
-  padding: 15px 30px;
+  padding: 12px 20px;
   border: 1px solid rgba(49, 130, 206, 0.3);
   transition: all 0.3s;
   font-weight: 600;
-  font-size: 28px;
+  font-size: 20px;
   box-shadow: 0px 4px 4px ${theme.accentOrange};
   cursor: pointer;
 
