@@ -1,4 +1,3 @@
-
 backend:
   name: git-gateway
   branch: master
@@ -9,7 +8,7 @@ backend:
     uploadMedia: '[skip ci] Upload “{{path}}”'
     deleteMedia: '[skip ci] Delete “{{path}}”'
 
-
+display_url: static/img/logo.png
 media_folder: static/img
 public_folder: /img
 
@@ -27,53 +26,36 @@ collections:
       - { label: 'CoverImage', name: 'cover', widget: 'image'}
       - { label: 'Author', name: 'author', widget: 'string'}
       - { label: 'Body', name: 'body', widget: 'markdown' }
-  
   - name: service
     label: Service
     folder: content/services
     slug: '{{slug}}'
     create: true
     fields:
-      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "serviceTemplate"}
-      - { label: 'Title', name: 'title', widget: 'string'}
-      - { label: 'OnboardTitle', name: 'onboardTitle', widget: 'string'}
-      - { label: 'OnboardDescription', name: 'onboardDescription', widget: 'string'}
-      - { label: 'OnboardImg', name: 'onboardImg', widget: 'image'}
-      - { label: 'BlogLink', name: 'blogLink', widget: 'string'}
-      - { label: 'OtherServiceTitle', name: 'otherServiceTitle', widget: 'string'}
-      - { label: 'OtherServiceLink', name: 'otherServiceLink', widget: 'string'}
-      - { label: 'OtherServiceDescription', name: 'otherServiceDescription', widget: 'string'}
-      - label: 'Benefits'
-        name: 'benefits'
-        widget: 'object'
-        fields: 
-          - { label: BenefitTitle, name: benefitTitle, widget: 'string' }
-            { label: BenefitDescription, name: benefitDescription, widget: 'string' }
-            { label: BenefitImg, name: benefitImg, widget: 'image' }
-          - { label: BenefitTitle, name: benefitTitle, widget: 'string' }
-            { label: BenefitDescription, name: benefitDescription, widget: 'string' }
-            { label: BenefitImg, name: benefitImg, widget: 'image' }
-          - { label: BenefitTitle, name: benefitTitle, widget: 'string' }
-            { label: BenefitDescription, name: benefitDescription, widget: 'string' }
-            { label: BenefitImg, name: benefitImg, widget: 'image' }
-          - { label: BenefitTitle, name: benefitTitle, widget: 'string' }
-            { label: BenefitDescription, name: benefitDescription, widget: 'string' }
-            { label: BenefitImg, name: benefitImg, widget: 'image' }
-      - label: 'Workflow'
-        name: 'workflow'
-        widget: 'object'
-        fields: 
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "serviceTemplate"}
+      - {label: 'Title', name: 'title', widget: 'string'}
+      - {label: 'OnboardTitle', name: 'onboardTitle', widget: 'string'}
+      - {label: 'OnboardDescription', name: 'onboardDescription', widget: 'string'}
+      - {label: 'OnboardImg', name: 'onboardImg', widget: 'image'}
+      - {label: 'BlogLink', name: 'blogLink', widget: 'string'}
+      - {label: 'OtherServiceTitle', name: 'otherServiceTitle', widget: 'string'}
+      - {label: 'OtherServiceLink', name: 'otherServiceLink', widget: 'string'}
+      - {label: 'OtherServiceDescription', name: 'otherServiceDescription', widget: 'string'}
+      - label: Benefit
+        name: benefits
+        widget: list
+        allow_add: false
+        fields:
+          - {label: BenefitTitle, name: benefitTitle, widget: 'string' }
+          - {label: BenefitDescription, name: benefitDescription, widget: 'string' }
+          - {label: BenefitImg, name: benefitImg, widget: 'image' }
+      - label: Workflow
+        name: workflow
+        widget: list
+        allow_add: false
+        fields:
           - { label: StepTitle, name: stepTitle, widget: 'string' }
-            { label: StepDescription, name: stepDescription, widget: 'string' }
-            { label: StepImg, name: stepImg, widget: 'image' }
-          - { label: StepTitle, name: stepTitle, widget: 'string' }
-            { label: StepDescription, name: stepDescription, widget: 'string' }
-            { label: StepImg, name: stepImg, widget: 'image' }
-          - { label: StepTitle, name: stepTitle, widget: 'string' }
-            { label: StepDescription, name: stepDescription, widget: 'string' }
-            { label: StepImg, name: stepImg, widget: 'image' }
-          - { label: StepTitle, name: stepTitle, widget: 'string' }
-            { label: StepDescription, name: stepDescription, widget: 'string' }
-            { label: StepImg, name: stepImg, widget: 'image' }
+          - { label: StepDescription, name: stepDescription, widget: 'string' }
+          - { label: StepImg, name: stepImg, widget: 'image' }
 
 

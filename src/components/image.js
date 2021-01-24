@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useImageData } from '../hooks/image'
 import Img from "gatsby-image"
 
 /*
@@ -10,23 +10,7 @@ import Img from "gatsby-image"
  */
 
 const Image = ({ filename, wrapperStyle, imgStyle }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      images: allFile(filter: { sourceInstanceName: { eq: "images" } }) {
-        edges {
-          node {
-            name
-            relativePath
-            childImageSharp {
-              fluid(maxWidth: 500) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
+  const data = useImageData()
   const image = data.images.edges.find(edgeObj =>
     edgeObj.node.relativePath.includes(filename)
   )
