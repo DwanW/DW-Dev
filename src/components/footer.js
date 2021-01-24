@@ -63,6 +63,14 @@ const FooterNavLinkContainer = styled.div`
   }
 `
 
+const CopyRightContainer = styled.div`
+position: absolute;
+bottom: 32px;
+font-size: 14px;
+color: white;
+pointer-events: none;
+`
+
 const Footer = () => (
   <FooterContainer>
     <ImageGradient />
@@ -130,7 +138,11 @@ const Footer = () => (
       <AniLink fade duration={0.3} to="/contact" className="navLink">
         Contact
       </AniLink>
+      <AniLink fade duration={0.3} to="/privacy-policy" className="navLink">
+        Privacy Policy
+      </AniLink>
     </FooterNavLinkContainer>
+    <CopyRightContainer>Copyright &#169; {new Date().getFullYear()} DW Interactive Dev. All Rights Reserved</CopyRightContainer>
   </FooterContainer>
 )
 
