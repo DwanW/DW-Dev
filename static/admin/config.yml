@@ -44,7 +44,6 @@ collections:
       - label: Benefit
         name: benefits
         widget: list
-        allow_add: false
         fields:
           - {label: BenefitTitle, name: benefitTitle, widget: 'string' }
           - {label: BenefitDescription, name: benefitDescription, widget: 'string' }
@@ -52,7 +51,6 @@ collections:
       - label: Workflow
         name: workflow
         widget: list
-        allow_add: false
         fields:
           - { label: StepTitle, name: stepTitle, widget: 'string' }
           - { label: StepDescription, name: stepDescription, widget: 'string' }
