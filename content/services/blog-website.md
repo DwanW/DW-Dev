@@ -1,25 +1,30 @@
 ---
 templateKey: serviceTemplate
 title: blog/portfolio website
-onboardTitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-onboardDescription: Etiam non metus in nisl finibus sollicitudin. Maecenas vehicula tellus ac scelerisque posuere.
+onboardTitle: Deliver your digital content the easy way.
+onboardDescription: Let others find your digital content easily, and take
+  advantage of highly performant website
 onboardImg: /img/blog-website.jpg
-blogLink: "/"
+blogLink: /
 otherServiceTitle: Progressive Web App
-otherServiceLink: "/"
+otherServiceLink: /service/pwa
 otherServiceDescription: A cost effective solution to mobile application
 benefits:
-  - benefitTitle: Interdum
-    benefitDescription: Morbi ac massa eget diam pharetra tincidunt a eu velit.
+  - benefitTitle: Lightning-fast performance
+    benefitDescription: Build your blog website with instant response time, and gain
+      even more advantage in search ranking..
     benefitImg: /img/blog-website.jpg
-  - benefitTitle: Interdum
-    benefitDescription: Morbi ac massa eget diam pharetra tincidunt a eu velit.
+  - benefitTitle: Familar Content Management
+    benefitDescription: Our flexible website architecture will be built with the CMS
+      you are familiar with.
     benefitImg: /img/blog-website.jpg
-  - benefitTitle: Interdum
-    benefitDescription: Morbi ac massa eget diam pharetra tincidunt a eu velit.
+  - benefitTitle: Affordable Price
+    benefitDescription: Our website architecture allows spaces for lower cost
+      compare to others, save significantly more money over time.
     benefitImg: /img/blog-website.jpg
-  - benefitTitle: Interdum
-    benefitDescription: Morbi ac massa eget diam pharetra tincidunt a eu velit.
+  - benefitTitle: Highly Secure
+    benefitDescription: Your website will come with high security by default so you
+      do not need to worry about it at all.
     benefitImg: /img/blog-website.jpg
 workflow:
   - stepTitle: Cras
