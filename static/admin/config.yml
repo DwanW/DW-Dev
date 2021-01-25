@@ -8,7 +8,7 @@ backend:
     uploadMedia: '[skip ci] Upload “{{path}}”'
     deleteMedia: '[skip ci] Delete “{{path}}”'
 
-display_url: static/img/logo.png
+display_url: dwinteractivedev.com
 media_folder: static/img
 public_folder: /img
 
