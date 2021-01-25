@@ -1,29 +1,26 @@
 ---
 templateKey: serviceTemplate
-title: eCommerce Website
+title: Progressive Web App
 onboardTitle: Make eCommerce easy to manage.
-onboardDescription: Have a scalable, secure business online, and let new
-  customers reach your product/service with ease.
+onboardDescription: ave an amazing idea for an App? Get all the support
+  you need here and build successful product to meet the needs.
 onboardImg: /img/e-commerce.jpg
 blogLink: /
-otherServiceTitle: Blog Website
-otherServiceLink: /services/blog-website
-otherServiceDescription: Let others find your digital content easily, and take
-  advantage of highly performant website
+otherServiceTitle: Custom Development
+otherServiceLink: /services/custom-development
+otherServiceDescription: DW Interactive Dev live with the idea to bring flexibility in development, make your idea alive.
 benefits:
   - benefitTitle: Excellent performance
-    benefitDescription: "CDN-based approach help delivering content to your customer
-      in an instant, avoid wait time from using database queries. "
+    benefitDescription: PWA allows for incredibly fast performance on mobile platform, taking advantages of assets caching.
     benefitImg: /img/responsive-website.jpg
-  - benefitTitle: Reliable uptime and affordable costs
-    benefitDescription: Cut operational costs from maintaining servers and
-      databases, save resources whiling providing the best value.
+  - benefitTitle: Affordable costs
+    benefitDescription: Your App is accessible from browser while saving hosting cost
     benefitImg: /img/responsive-website.jpg
   - benefitTitle: High Security
     benefitDescription: With modern website architecture, your website data are in good hands.
     benefitImg: /img/responsive-website.jpg
-  - benefitTitle: Ease of Management
-    benefitDescription: Flexible management system, easy to use and you can customize it freely
+  - benefitTitle: One development Only
+    benefitDescription: Save development cost for different operating systems, PWA works just like an app without the need for user to download it.
     benefitImg: /img/responsive-website.jpg
 workflow:
   - stepTitle: Identify project goals

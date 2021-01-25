@@ -1,23 +1,20 @@
 ---
 templateKey: serviceTemplate
-title: eCommerce Website
-onboardTitle: Make eCommerce easy to manage.
-onboardDescription: Have a scalable, secure business online, and let new
-  customers reach your product/service with ease.
+title: Custom Development
+onboardTitle: Build something great
+onboardDescription: DW Interactive Dev live with the idea to bring flexibility in development, make your idea alive.
 onboardImg: /img/e-commerce.jpg
 blogLink: /
-otherServiceTitle: Blog Website
-otherServiceLink: /services/blog-website
-otherServiceDescription: Let others find your digital content easily, and take
-  advantage of highly performant website
+otherServiceTitle: eCommerce Website
+otherServiceLink: /services/ecommerce-website
+otherServiceDescription: Have a scalable, secure business online, and let new
+  customers reach your product/service with ease.
 benefits:
-  - benefitTitle: Excellent performance
-    benefitDescription: "CDN-based approach help delivering content to your customer
-      in an instant, avoid wait time from using database queries. "
+  - benefitTitle: High quality in performance
+    benefitDescription: "Built with best practices in processing data, images, and functionalities. Make your application as fast as possible "
     benefitImg: /img/responsive-website.jpg
-  - benefitTitle: Reliable uptime and affordable costs
-    benefitDescription: Cut operational costs from maintaining servers and
-      databases, save resources whiling providing the best value.
+  - benefitTitle: Highly Scalable
+    benefitDescription: Scale services according to your need, never overpay services that you don't need.
     benefitImg: /img/responsive-website.jpg
   - benefitTitle: High Security
     benefitDescription: With modern website architecture, your website data are in good hands.

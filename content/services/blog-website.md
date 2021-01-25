@@ -7,7 +7,7 @@ onboardDescription: Let others find your digital content easily, and take
 onboardImg: /img/blog-website.jpg
 blogLink: /
 otherServiceTitle: Progressive Web App
-otherServiceLink: /service/pwa
+otherServiceLink: /services/progressive-web-app
 otherServiceDescription: A cost effective solution to mobile application
 benefits:
   - benefitTitle: Lightning-fast performance
@@ -27,16 +27,22 @@ benefits:
       do not need to worry about it at all.
     benefitImg: /img/blog-website.jpg
 workflow:
-  - stepTitle: Cras
-    stepDescription: Phasellus tortor est, tempus sed mi non, lacinia maximus ligula.
+  - stepTitle: Identify project goals
+    stepDescription: We'll discuss what your business needs, and what are some of
+      the business goals. Once it is determined, we will follow through on those
+      goals throughout the project.
     stepImg: /img/blog-website.jpg
-  - stepTitle: Cras
-    stepDescription: Phasellus tortor est, tempus sed mi non, lacinia maximus ligula.
+  - stepTitle: Work Transparency
+    stepDescription: Our project management information is shared with you, so you
+      are always be clear about what is being working, and what's the next step.
     stepImg: /img/blog-website.jpg
-  - stepTitle: Cras
-    stepDescription: Phasellus tortor est, tempus sed mi non, lacinia maximus ligula.
+  - stepTitle: Deliver the Result
+    stepDescription: We make sure to our work is in sync with your needs and goals.
+      By the end of the project, you are supported with the knowledge to go on
+      your own.
     stepImg: /img/blog-website.jpg
-  - stepTitle: Cras
-    stepDescription: Phasellus tortor est, tempus sed mi non, lacinia maximus ligula.
+  - stepTitle: Continuous Support
+    stepDescription: We will be happy to provide support even after the project. Let
+      us know if you need us to help with maintenance and future feature.
     stepImg: /img/blog-website.jpg
 ---
