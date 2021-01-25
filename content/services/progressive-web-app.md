@@ -1,9 +1,8 @@
 ---
 templateKey: serviceTemplate
 title: Progressive Web App
-onboardTitle: Make eCommerce easy to manage.
-onboardDescription: ave an amazing idea for an App? Get all the support
-  you need here and build successful product to meet the needs.
+onboardTitle: A cost effective solution to mobile application
+onboardDescription: Build once and enjoy on any platform.
 onboardImg: /img/e-commerce.jpg
 blogLink: /
 otherServiceTitle: Custom Development
@@ -30,7 +29,7 @@ workflow:
     stepImg: /img/responsive-website.jpg
   - stepTitle: Work Transparency
     stepDescription: Our project management information is shared with you, so you
-      are always be clear about what is being working, and what's the next step.
+      are always clear about what is being worked on, and what the next step is.
     stepImg: /img/responsive-website.jpg
   - stepTitle: Deliver the Result
     stepDescription: We make sure to our work is in sync with your needs and goals.

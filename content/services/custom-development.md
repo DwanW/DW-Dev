@@ -2,7 +2,7 @@
 templateKey: serviceTemplate
 title: Custom Development
 onboardTitle: Build something great
-onboardDescription: DW Interactive Dev live with the idea to bring flexibility in development, make your idea alive.
+onboardDescription: DW Interactive Dev live with the idea to bring flexibility in development, bring your idea to life.
 onboardImg: /img/e-commerce.jpg
 blogLink: /
 otherServiceTitle: eCommerce Website
@@ -30,7 +30,7 @@ workflow:
     stepImg: /img/responsive-website.jpg
   - stepTitle: Work Transparency
     stepDescription: Our project management information is shared with you, so you
-      are always be clear about what is being working, and what's the next step.
+      are always clear about what is being worked on, and what the next step is.
     stepImg: /img/responsive-website.jpg
   - stepTitle: Deliver the Result
     stepDescription: We make sure to our work is in sync with your needs and goals.

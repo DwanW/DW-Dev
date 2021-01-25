@@ -33,7 +33,7 @@ workflow:
     stepImg: /img/responsive-website.jpg
   - stepTitle: Work Transparency
     stepDescription: Our project management information is shared with you, so you
-      are always be clear about what is being working, and what's the next step.
+      are always clear about what is being worked on, and what the next step is.
     stepImg: /img/responsive-website.jpg
   - stepTitle: Deliver the Result
     stepDescription: We make sure to our work is in sync with your needs and goals.
