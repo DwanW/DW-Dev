@@ -2,36 +2,46 @@
 templateKey: serviceTemplate
 title: eCommerce Website
 onboardTitle: Make eCommerce easy to manage.
-onboardDescription: Have a scalable, secure business
+onboardDescription: Have a scalable, secure business online, and let new
+  customers reach your product/service with ease.
 onboardImg: /img/e-commerce.jpg
 blogLink: /
-otherServiceTitle: Blog Website
-otherServiceLink: /blog-website
-otherServiceDescription: Build personalized, modern website to express personal brand
+otherServiceTitle: Custom Developmentt
+otherServiceLink: /custom-development
+otherServiceDescription: Have an amazing idea for an App? Get all the support
+  you need here and build successful product to meet the needs.
 benefits:
-  - benefitTitle: Interdum
-    benefitDescription: Morbi ac massa eget diam pharetra tincidunt a eu velit.
-    benefitImg: /img/blog-website.jpg
-  - benefitTitle: Interdum
-    benefitDescription: Morbi ac massa eget diam pharetra tincidunt a eu velit.
-    benefitImg: /img/blog-website.jpg
-  - benefitTitle: Interdum
-    benefitDescription: Morbi ac massa eget diam pharetra tincidunt a eu velit.
-    benefitImg: /img/blog-website.jpg
-  - benefitTitle: Interdum
-    benefitDescription: Morbi ac massa eget diam pharetra tincidunt a eu velit.
-    benefitImg: /img/blog-website.jpg
+  - benefitTitle: Excellent performance
+    benefitDescription: "CDN-based approach help delivering content to your customer
+      in an instant, avoid wait time from using database queries. "
+    benefitImg: /img/responsive-website.jpg
+  - benefitTitle: Reliable uptime and affordable costs
+    benefitDescription: Cut operational costs from maintaining servers and
+      databases, save resources whiling providing the best value.
+    benefitImg: /img/responsive-website.jpg
+  - benefitTitle: High Security
+    benefitDescription: With modern website architecture, your website data are in good hands.
+    benefitImg: /img/responsive-website.jpg
+  - benefitTitle: Ease of Management
+    benefitDescription: Flexible management system, easy to use and you can customize it freely
+    benefitImg: /img/responsive-website.jpg
 workflow:
-  - stepTitle: Cras
-    stepDescription: Phasellus tortor est, tempus sed mi non, lacinia maximus ligula.
-    stepImg: /img/blog-website.jpg
-  - stepTitle: Cras
-    stepDescription: Phasellus tortor est, tempus sed mi non, lacinia maximus ligula.
-    stepImg: /img/blog-website.jpg
-  - stepTitle: Cras
-    stepDescription: Phasellus tortor est, tempus sed mi non, lacinia maximus ligula.
-    stepImg: /img/blog-website.jpg
-  - stepTitle: Cras
-    stepDescription: Phasellus tortor est, tempus sed mi non, lacinia maximus ligula.
+  - stepTitle: Identify project goals
+    stepDescription: We'll discuss what your business needs, and what are some of
+      the business goals. Once it is determined, we will follow through on those
+      goals throughout the project.
+    stepImg: /img/responsive-website.jpg
+  - stepTitle: Work Transparency
+    stepDescription: Our project management information is shared with you, so you
+      are always be clear about what is being working, and what's the next step.
+    stepImg: /img/responsive-website.jpg
+  - stepTitle: Deliver the Result
+    stepDescription: We make sure to our work is in sync with your needs and goals.
+      By the end of the project, you are supported with the knowledge to go on
+      your own.
+    stepImg: /img/responsive-website.jpg
+  - stepTitle: Continuous Support
+    stepDescription: We will be happy to provide support even after the project. Let
+      us know if you need us to help with maintenance and future feature.
     stepImg: /img/blog-website.jpg
 ---
