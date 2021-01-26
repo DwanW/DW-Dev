@@ -13,36 +13,36 @@ benefits:
   - benefitTitle: Lightning-fast performance
     benefitDescription: Build your blog website with instant response time, and gain
       even more advantage in search ranking..
-    benefitImg: /img/blog-website.jpg
+    benefitImg: /img/service-fast.png
   - benefitTitle: Familar Content Management
     benefitDescription: Our flexible website architecture will be built with the CMS
       you are familiar with.
-    benefitImg: /img/blog-website.jpg
+    benefitImg: /img/service-content.png
   - benefitTitle: Affordable Price
     benefitDescription: Our website architecture allows spaces for lower cost
       compare to others, save significantly more money over time.
-    benefitImg: /img/blog-website.jpg
+    benefitImg: /img/service-save.png
   - benefitTitle: Highly Secure
     benefitDescription: Your website will come with high security by default so you
       do not need to worry about it at all.
-    benefitImg: /img/blog-website.jpg
+    benefitImg: /img/service-secure.png
 workflow:
   - stepTitle: Identify project goals
     stepDescription: We'll discuss what your business needs, and what are some of
       the business goals. Once it is determined, we will follow through on those
       goals throughout the project.
-    stepImg: /img/blog-website.jpg
+    stepImg: /img/search.jpg
   - stepTitle: Work Transparency
     stepDescription: Our project management information is shared with you, so you
       are always clear about what is being worked on, and what the next step is.
-    stepImg: /img/blog-website.jpg
+    stepImg: /img/transparency.jpg
   - stepTitle: Deliver the Result
     stepDescription: We make sure to our work is in sync with your needs and goals.
       By the end of the project, you are supported with the knowledge to go on
       your own.
-    stepImg: /img/blog-website.jpg
+    stepImg: /img/result.jpg
   - stepTitle: Continuous Support
     stepDescription: We will be happy to provide support even after the project. Let
       us know if you need us to help with maintenance and future feature.
-    stepImg: /img/blog-website.jpg
+    stepImg: /img/support.jpg
 ---
