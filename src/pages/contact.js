@@ -177,7 +177,7 @@ const ContactPage = ({ location }) => {
         <ContactSectionTitle>Contact Us</ContactSectionTitle>
         <ContactCard>
           <ContactTarget>General Contact</ContactTarget>
-          <ContactAddress>dwanwangdev@gmail.com</ContactAddress>
+          <ContactAddress>info@dwinteractivedev.com</ContactAddress>
         </ContactCard>
         <MediaLinkContainer>
           <LinkContainer>

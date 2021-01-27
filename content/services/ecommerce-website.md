@@ -17,7 +17,7 @@ benefits:
     benefitImg: /img/service-fast.png
   - benefitTitle: Reliable uptime and affordable costs
     benefitDescription: Cut operational costs from maintaining servers and
-      databases, save resources whiling providing the best value.
+      databases, save resources while providing the best value.
     benefitImg: /img/service-save.png
   - benefitTitle: High Security
     benefitDescription: With modern website architecture, your website data are in good hands.
