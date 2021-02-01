@@ -240,8 +240,8 @@ const ValueDescription = styled.div`
 `
 
 const MainFeature = styled.div`
-margin: 120px 0 0px 0;
-padding: 40px 0;
+  margin: 120px 0 0px 0;
+  padding: 40px 0;
 `
 
 const SubTitle = styled.div`
@@ -275,29 +275,44 @@ const HomePage = ({ location }) => {
       <SEO title="Home" />
       <Hero />
       <MainFeature>
-        <PrimaryTitle><span style={{color: theme.accentViolet}}>Core web vitals</span> done right</PrimaryTitle>
+        <PrimaryTitle>
+          <span style={{ color: theme.accentViolet }}>Core web vitals</span>{" "}
+          done right
+        </PrimaryTitle>
         <SubTitle>New Google ranking factor starting May 2021</SubTitle>
         <FeatureItem>
-        <FeatureImageContainer width="45%" leftMargin="0%">
-            <Image
-              filename={"lighthouse"}
-            />
+          <FeatureImageContainer width="45%" leftMargin="0%">
+            <Image filename={"lighthouse"} />
           </FeatureImageContainer>
-          <FeatureDescriptionContainer 
-            style={{ backgroundColor: theme.uiGrayLight, padding:"30px", borderRadius: "10px" }}
+          <FeatureDescriptionContainer
+            style={{
+              backgroundColor: theme.uiGrayLight,
+              padding: "30px",
+              borderRadius: "10px",
+            }}
             data-aos="fade-up"
           >
-            <p>Core Web Vitals are <span className="highlight">the latest user experience metrics</span> that will soon become very important Google ranking factors. It focuses on the following specifications:</p>
-            <ul style={{color: theme.accentViolet}}>
+            <p>
+              Core Web Vitals are{" "}
+              <span className="highlight">
+                the latest user experience metrics
+              </span>{" "}
+              that will soon become very important Google ranking factors. It
+              focuses on the following specifications:
+            </p>
+            <ul style={{ color: theme.accentViolet }}>
               <li>Loading</li>
               <li>Interactivity</li>
               <li>Visual Stability</li>
             </ul>
-            <p>At DW Interactive Dev, we can help you improve core web vitals and grow your business further</p>
-        </FeatureDescriptionContainer>
+            <p>
+              At DW Interactive Dev, we can help you improve core web vitals and
+              grow your business further
+            </p>
+          </FeatureDescriptionContainer>
         </FeatureItem>
       </MainFeature>
-      
+
       <KeyFeatureSection>
         {/* <Video src='/nexus.mp4' /> */}
         <FeatureItem data-aos="zoom-in-right" data-aos-delay="0">
@@ -333,7 +348,9 @@ const HomePage = ({ location }) => {
 
       <ButtonContainer data-aos="zoom-in" data-aos-delay="0">
         <AniLink fade duration={0.4} to="/services" className="navLink">
-          <CustomButton aria-label="services" inverted>Get Started</CustomButton>
+          <CustomButton aria-label="services" inverted>
+            Get Started
+          </CustomButton>
         </AniLink>
       </ButtonContainer>
 
@@ -396,7 +413,9 @@ const HomePage = ({ location }) => {
 
       <ButtonContainer>
         <AniLink fade duration={0.4} to="/contact" className="navLink">
-          <CustomButton aria-label="contact" inverted>Let's Chat</CustomButton>
+          <CustomButton aria-label="contact" inverted>
+            Let's Chat
+          </CustomButton>
         </AniLink>
       </ButtonContainer>
     </Layout>

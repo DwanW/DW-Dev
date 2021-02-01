@@ -1,7 +1,7 @@
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from "gatsby"
 
 export const useImageData = () => {
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       images: allFile(filter: { sourceInstanceName: { eq: "images" } }) {
         edges {
@@ -16,6 +16,7 @@ export const useImageData = () => {
           }
         }
       }
-    }`)
-    return data;
+    }
+  `)
+  return data
 }

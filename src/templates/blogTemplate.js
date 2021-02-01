@@ -59,47 +59,38 @@ const ContentContainer = styled.div`
   margin-top: 64px;
 `
 
-export const BlogTemplate = ({
-  cover,
-  title,
-  author,
-  date,
-  body
-}) => {
-
+export const BlogTemplate = ({ cover, title, author, date, body }) => {
   return (
     <BlogContainer>
-        <BlogCoverContainer>
-          <Image
-            filename={cover.replace("/img/", "")}
-            wrapperStyle={{
-              height: "100%",
-              width: "100%",
-              position: "absolute",
-              zIndex: "-1",
-            }}
-          />
-          <Overlay />
-          <MetaContainer>
-            <MetaTitle>{title}</MetaTitle>
-            <MetaDescription>{author}</MetaDescription>
-            <MetaDescription>{date}</MetaDescription>
-          </MetaContainer>
-        </BlogCoverContainer>
-
-        <ContentContainer
-          dangerouslySetInnerHTML={{ __html: body }}
+      <BlogCoverContainer>
+        <Image
+          filename={cover.replace("/img/", "")}
+          wrapperStyle={{
+            height: "100%",
+            width: "100%",
+            position: "absolute",
+            zIndex: "-1",
+          }}
         />
-      </BlogContainer>
+        <Overlay />
+        <MetaContainer>
+          <MetaTitle>{title}</MetaTitle>
+          <MetaDescription>{author}</MetaDescription>
+          <MetaDescription>{date}</MetaDescription>
+        </MetaContainer>
+      </BlogCoverContainer>
+
+      <ContentContainer dangerouslySetInnerHTML={{ __html: body }} />
+    </BlogContainer>
   )
 }
 
 const Blog = ({ data, location }) => {
   return (
     <Layout location={location}>
-      <BlogTemplate 
+      <BlogTemplate
         {...data.markdownRemark.frontmatter}
-        body={ data.markdownRemark.html }
+        body={data.markdownRemark.html}
       />
     </Layout>
   )

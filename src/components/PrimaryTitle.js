@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import screenSizes from "../data/screenSizes"
-import theme from '../assets/theme'
+import theme from "../assets/theme"
 
 const PrimaryTitleContainer = styled.div`
   color: ${theme.uiBlack};

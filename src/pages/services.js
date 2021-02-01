@@ -77,7 +77,7 @@ const ServiceCardDescription = styled.div`
 `
 
 const ServiceCardButton = styled.div`
-margin-top: 16px;
+  margin-top: 16px;
 `
 
 const ButtonContainer = styled.div`
@@ -245,9 +245,20 @@ const ServicesPage = ({ location }) => {
                   {node.description}
                 </ServiceCardDescription>
                 <ServiceCardButton>
-                    <AniLink fade duration={0.4} to={node.slug} className="navLink">
-                        <CustomButton aria-label="services-link" style={{ padding: "8px 10px" }} inverted>Read More</CustomButton>
-                    </AniLink>
+                  <AniLink
+                    fade
+                    duration={0.4}
+                    to={node.slug}
+                    className="navLink"
+                  >
+                    <CustomButton
+                      aria-label="services-link"
+                      style={{ padding: "8px 10px" }}
+                      inverted
+                    >
+                      Read More
+                    </CustomButton>
+                  </AniLink>
                 </ServiceCardButton>
               </ServiceCardContainer>
             </ServiceContainer>

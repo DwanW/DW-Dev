@@ -64,11 +64,11 @@ const FooterNavLinkContainer = styled.div`
 `
 
 const CopyRightContainer = styled.div`
-position: absolute;
-bottom: 32px;
-font-size: 14px;
-color: white;
-pointer-events: none;
+  position: absolute;
+  bottom: 32px;
+  font-size: 14px;
+  color: white;
+  pointer-events: none;
 `
 
 const Footer = () => (
@@ -142,7 +142,10 @@ const Footer = () => (
         Privacy Policy
       </AniLink>
     </FooterNavLinkContainer>
-    <CopyRightContainer>Copyright &#169; {new Date().getFullYear()} DW Interactive Dev. All Rights Reserved</CopyRightContainer>
+    <CopyRightContainer>
+      Copyright &#169; {new Date().getFullYear()} DW Interactive Dev. All Rights
+      Reserved
+    </CopyRightContainer>
   </FooterContainer>
 )
 

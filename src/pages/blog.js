@@ -115,7 +115,7 @@ export default BlogPage
 export const pageQuery = graphql`
   query BlogPage {
     allMarkdownRemark(
-      filter: {frontmatter: {templateKey: {eq: "blogTemplate"}}}
+      filter: { frontmatter: { templateKey: { eq: "blogTemplate" } } }
       sort: { fields: frontmatter___date, order: DESC }
       limit: 10
     ) {

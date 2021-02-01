@@ -1,5 +1,5 @@
 import React from "react"
-import { useImageData } from '../hooks/image'
+import { useImageData } from "../hooks/image"
 import Img from "gatsby-image"
 
 /*
