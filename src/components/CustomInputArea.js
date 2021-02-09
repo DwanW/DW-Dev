@@ -39,7 +39,7 @@ const CustomTextArea = styled.textarea`
     outline: none;
   }
   &:focus {
-    outline: none;
+    outline-color: #215688;
   }
 `
 

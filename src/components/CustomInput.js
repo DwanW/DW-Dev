@@ -37,7 +37,7 @@ const PrimaryInput = styled.input`
     outline: none;
   }
   &:focus {
-    outline: none;
+    outline-color: #215688;
   }
 `
 
