@@ -9,9 +9,7 @@ export const useImageData = () => {
             name
             relativePath
             childImageSharp {
-              fluid(maxWidth: 500) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: CONSTRAINED, width: 500)
             }
           }
         }

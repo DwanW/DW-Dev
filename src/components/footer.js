@@ -76,15 +76,15 @@ const Footer = () => (
     <ImageGradient />
     <Image
       filename={"foot-bg"}
+      imgStyle={{ opacity: 0.3 }}
       wrapperStyle={{
-        backgroundColor: "#3182CE",
         position: "absolute",
         width: "100%",
         height: "100%",
         top: 0,
         zIndex: -1,
       }}
-      imgStyle={{ opacity: 0.2 }}
+      backgroundColor="#3182CE"
     />
     <MediaLinkContainer>
       <LinkContainer>

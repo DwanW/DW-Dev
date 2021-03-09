@@ -7,7 +7,6 @@ import screenSizes from "../data/screenSizes"
 import CustomButton from "../components/CustomButton"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import theme from "../assets/theme"
-import { motion } from "framer-motion"
 
 const OnboardingContainer = styled.div`
   display: flex;
@@ -143,7 +142,7 @@ const Service = ({ data, location }) => {
     onboardTitle,
     onboardDescription,
     onboardImg,
-    blogLink,
+    // blogLink,
     benefits,
     workflow,
     otherServiceTitle,

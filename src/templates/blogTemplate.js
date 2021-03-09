@@ -59,7 +59,7 @@ const ContentContainer = styled.div`
   margin-top: 64px;
 `
 
-export const BlogTemplate = ({ cover, title, author, date, body }) => {
+const BlogTemplate = ({ cover, title, author, date, body }) => {
   return (
     <BlogContainer>
       <BlogCoverContainer>
