@@ -25,7 +25,7 @@ const ImageGradient = styled.div`
   height: 115px;
   width: 100%;
   z-index: 0;
-  background: linear-gradient(to top, rgba(196, 196, 196, 0) 0%, #ffffff 100%);
+  background: linear-gradient(to top, rgba(196, 196, 196, 0) 20%, #ffffff 100%);
 `
 
 const MediaLinkContainer = styled.div`
@@ -76,7 +76,6 @@ const Footer = () => (
     <ImageGradient />
     <Image
       filename={"foot-bg"}
-      imgStyle={{ opacity: 0.3 }}
       wrapperStyle={{
         position: "absolute",
         width: "100%",

@@ -104,7 +104,7 @@ const ImageGradientUpper = styled.div`
   height: 80px;
   width: 100%;
   z-index: 0;
-  background: linear-gradient(to top, rgba(196, 196, 196, 0) 0%, #ffffff 100%);
+  background: linear-gradient(to top, rgba(196, 196, 196, 0) 30%, #ffffff 100%);
 `
 
 const ImageGradientLower = styled.div`
@@ -116,7 +116,7 @@ const ImageGradientLower = styled.div`
   z-index: 0;
   background: linear-gradient(
     to bottom,
-    rgba(196, 196, 196, 0) 0%,
+    rgba(196, 196, 196, 0) 30%,
     #ffffff 100%
   );
 `
@@ -366,7 +366,6 @@ const HomePage = ({ location }) => {
             height: "600px",
             zIndex: -1,
           }}
-          imgStyle={{ opacity: 0.5 }}
         />
         <ImageGradientLower />
         <SectionTitle>What Set Us Apart</SectionTitle>

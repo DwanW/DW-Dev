@@ -237,7 +237,6 @@ const ServicesPage = ({ location }) => {
                   transform:
                     idx % 2 === 0 ? "translateX(-20%)" : "translateX(20%)",
                 }}
-                imgStyle={{ opacity: 0.8 }}
               />
               <ServiceCardContainer index={idx}>
                 <ServiceCardTitle>{node.title}</ServiceCardTitle>

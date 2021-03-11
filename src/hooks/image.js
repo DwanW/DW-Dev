@@ -9,7 +9,7 @@ export const useImageData = () => {
             name
             relativePath
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED, width: 500)
+              gatsbyImageData(layout: CONSTRAINED, width: 800)
             }
           }
         }
